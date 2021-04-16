@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "AASA,AAAA,IAAI,CAAC;EACD,KAAK,EAAC,GAAG;CACZ",
+    "sources": [
+        "../../sass/main.scss",
+        "../../sass/Utils/_variables.scss",
+        "../../sass/Utils/_functions.scss",
+        "../../sass/Utils/_mixins.scss",
+        "../../sass/Utils/_placeholders.scss",
+        "../../sass/Utils/_extensions.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

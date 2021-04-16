@@ -1,5 +1,12 @@
 @import "./Utils/variables";         // $name
 @import "./Utils/functions";        // @function name
 @import "./Utils/mixins";           // @mixin name
-@import "./Utils/placeholders";     // %name
-@import "./Utils/extensions";       // 
+@import "./Utils/placeholders"; 
+    // %name
+@import "./Utils/extensions";       //
+
+
+
+body {
+    color:red;
+}

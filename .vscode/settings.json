@@ -1,3 +1,21 @@
 {
-    "liveServer.settings.fullReload": true
+    "vscode-w3cvalidation.validator-token": "Fri, 09 Apr 2021 09:41:17 GMT",
+    "liveServer.settings.fullReload": true,
+    "liveSassCompile.settings.excludeList": [
+
+        "**/node_modules/**",
+        ".vscode/**"
+    ],
+    "liveSassCompile.settings.formats": [
+
+
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "public/css/"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": true
+}
 }
