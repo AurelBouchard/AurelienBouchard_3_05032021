@@ -3,71 +3,82 @@
     <head>
         <meta charset="utf-8" />
         <title>ohmyfood</title>
+        
+        <meta name="description" content="">
+		<meta name="keywords" content="">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://kit.fontawesome.com/37c61712f6.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="public/css/main.css" />
     </head>
 
     <body>
         <header>
-
+            <i class="fas fa-arrow-left back_to_index"></i>
+            <span class="logo">ohmyfood</span>
         </header>
 
         <div id="locate">
-
+            <i class="fas fa-map-marker-alt not_on_index"></i>
+            <span class="place">Paris, Belleville</span>
         </div>
 
-        <section class="introduction">
-            <h1></h1>
-            <p></p>
+        <section id="introduction">
+            <h1>Réservez le menu qui vous convient</h1>
+            <p>Découvrez des restaurants d'execption, sélectionnés par nos soins.</p>
 
-            <a class="btn">
-
-            </a>
+            <a href="index.html#restaurants" class="btn">Explorer nos restaurants</a>
         </section>
 
-        <section class="rules_list">
+
+        <section id="rules_list">
             <h1>Fonctionnement</h1>
 
             <div class="rolling_rules">
                 <div class="rule">
-                    <p>1</p>
-                    <i class="fas fa-star-solid"></i>
-                    <p>Texte 1</p>
+                    <span class="chip">1</span>
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Choisissez votre restaurant</span>
                 </div>
                 <div class="rule">
-                    <p>2</p>
-                    <i class="fas fa-star-solid"></i>
-                    <p>Texte 2</p>
+                    <span class="chip">2</span>
+                    <i class="fas fa-list-ul"></i>
+                    <span>Composez votre menu</span>
                 </div>
                 <div class="rule">
-                    <p>3</p>
-                    <i class="fas fa-star-solid"></i>
-                    <p>Texte 3</p>
+                    <span class="chip">3</span>
+                    <i class="fas fa-store"></i>
+                    <span>Dégustez au restaurant</span>
                 </div>
             </div>
-
         </section>
 
-        <section class="restaurants">
+
+        <section id="restaurants">
             <h1>Restaurants</h1>
 
             <div class="show_restaurants">
-                <a class="rest_card">
-                    <img src="#" alt="">
+                <a href="" class="rest_card">
+                    <img src="#" alt="la_palette_du_gout">
+                    <span class="flag_new">Nouveau</span>
                     <div class="bottom_stripe">
-                        
-
+                        <h2>nom du resto</h2>
+                        <p>quartier</p>                       
+                        <i class="far fa-heart"></i>
                     </div>
                 </a>
             </div>
         </section>
 
         <footer>
-            <p>ohmyfood</p>
+            <p class="title">ohmyfood</p>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+                <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+                <li>Mentions légales</li>
+                <li>Contact</li>
             </ul>
             
         </footer>

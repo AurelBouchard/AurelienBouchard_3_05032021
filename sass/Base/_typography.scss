@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Shrikhand";
+  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"),
+        url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
+  // font-weight: medium;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: "Roboto-regular";
+  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
+  // font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-bold";
+  src: url("/public/fonts/roboto/Roboto-Bold.ttf");
+  // font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-thin";
+  src: url("/public/fonts/roboto/Roboto-Thin.ttf");
+  // font-weight: medium;
+  font-style: normal;
+}
+
+
+
+body {
+  font-family: "Roboto-regular";
+}
+
+.logo {
+  font-family: "Shrikhand";
+  font-size:30px;
+}
+
+.title {
+  font-family: "Shrikhand";
+}
+
+#introduction p {
+  font-family: "Roboto-thin";
+}
+
+.btn {
+  font-family: "Roboto-bold";
+  font-size: 16px;
+}

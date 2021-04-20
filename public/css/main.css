@@ -1,1 +1,66 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: "Shrikhand";
+  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"), url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-regular";
+  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-bold";
+  src: url("/public/fonts/roboto/Roboto-Bold.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-thin";
+  src: url("/public/fonts/roboto/Roboto-Thin.ttf");
+  font-style: normal;
+}
+
+body {
+  font-family: "Roboto-regular";
+}
+
+.logo {
+  font-family: "Shrikhand";
+  font-size: 30px;
+}
+
+.title {
+  font-family: "Shrikhand";
+}
+
+#introduction p {
+  font-family: "Roboto-thin";
+}
+
+.btn {
+  font-family: "Roboto-bold";
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.btn {
+  color: white;
+  background: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
+  background: linear-gradient(to left top, #9256dc, #ff7ad9);
+  border-radius: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+header {
+  -webkit-box-shadow: 0.25rem 0 0.5rem #363636;
+          box-shadow: 0.25rem 0 0.5rem #363636;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
