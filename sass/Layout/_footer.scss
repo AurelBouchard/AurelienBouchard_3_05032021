@@ -1,0 +1,30 @@
+footer {
+    background-color: $color-darkgrey;
+    color: white;
+
+    padding: 1.5rem 0.5rem;
+
+    & .title {
+        font-size: $FS_foot_title;
+        margin-bottom: 1rem;
+    }
+
+    & li {
+        line-height: 18px;
+        font-size: $FS_foot_li_2;
+        margin-bottom: .5rem;
+        &:nth-child(1), &:nth-child(2) {
+            font-weight: bold;
+            font-size: $FS_foot_li_1;
+        }
+        & i{
+            display:inline-block;
+            line-height: 18px;
+            width: 1.5rem;
+            text-align: left;
+            font-size: 12px;
+
+        }
+    }
+
+}
