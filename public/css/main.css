@@ -5,20 +5,26 @@
 }
 
 @font-face {
-  font-family: "Roboto-regular";
-  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Roboto-bold";
   src: url("/public/fonts/roboto/Roboto-Bold.ttf");
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Roboto-thin";
-  src: url("/public/fonts/roboto/Roboto-Thin.ttf");
+  font-family: "Roboto-medium";
+  src: url("/public/fonts/roboto/Roboto-Medium.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-regular";
+  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-light";
+  src: url("/public/fonts/roboto/Roboto-Light.ttf");
   font-style: normal;
 }
 
@@ -28,7 +34,6 @@ body {
 
 .logo {
   font-family: "Shrikhand";
-  font-size: 30px;
 }
 
 .title {
@@ -36,12 +41,19 @@ body {
 }
 
 #introduction p {
-  font-family: "Roboto-thin";
+  font-family: "Roboto-light";
 }
 
 .btn {
-  font-family: "Roboto-bold";
-  font-size: 16px;
+  font-family: "Roboto-medium";
+}
+
+.flag_new {
+  font-family: "Roboto-medium";
+}
+
+h1 {
+  font-family: "Roboto-medium";
 }
 
 * {
@@ -50,17 +62,190 @@ body {
   text-decoration: none;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.welcome_pic {
+  height: 200px;
+  width: 100%;
+}
+
+.welcome_pic img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+a:active {
+  color: #9256dc;
+}
+
+a:visited {
+  color: black;
+}
+
+h1 {
+  font-size: 1.45rem;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
 .btn {
+  display: inline-block;
   color: white;
-  background: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
-  background: linear-gradient(to left top, #9256dc, #ff7ad9);
-  border-radius: 1.5rem;
-  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff7ad9;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(rgba(3, 3, 3, 0)));
+  background-image: linear-gradient(to left top, #9256dc, rgba(3, 3, 3, 0));
+  border-radius: 2rem;
+  padding: 1rem 0;
+  -webkit-transition: background-color 80ms 40ms;
+  transition: background-color 80ms 40ms;
+}
+
+.btn:active {
+  color: white;
+  background-color: #9256dc;
+  -webkit-transition: background-color 80ms 40ms;
+  transition: background-color 80ms 40ms;
+}
+
+.btn:visited {
+  color: white;
+}
+
+.flag_new {
+  background-color: #98e2cf;
+  color: #008563;
+  font-size: 0.86rem;
+  padding: 0.5rem 0.8rem 0.3rem 0.8rem;
+  border-radius: 0.2rem;
 }
 
 header {
-  -webkit-box-shadow: 0.25rem 0 0.5rem #363636;
-          box-shadow: 0.25rem 0 0.5rem #363636;
   text-align: center;
+  padding-top: 1.2rem;
+  padding-bottom: .5rem;
+  background-color: white;
+  -webkit-box-shadow: 0 0 .5rem #9a9a9a;
+          box-shadow: 0 0 .5rem #9a9a9a;
+}
+
+.back_to_index {
+  position: absolute;
+  left: 1.5rem;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #363636;
+  color: white;
+  padding: 1.5rem 0.5rem;
+}
+
+footer .title {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+footer li {
+  line-height: 18px;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+footer li:nth-child(1), footer li:nth-child(2) {
+  font-weight: bold;
+  font-size: 15.5px;
+}
+
+footer li i {
+  display: inline-block;
+  line-height: 18px;
+  width: 1.5rem;
+  text-align: left;
+  font-size: 12px;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+#locate {
+  text-align: center;
+}
+
+#locate i {
+  padding: 1rem;
+}
+
+#introduction {
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 2.5rem 0;
+}
+
+#introduction h1 {
+  padding: 0 4rem;
+}
+
+#introduction p {
+  padding: 1rem;
+  font-size: 1.125rem;
+}
+
+#introduction .btn {
+  width: 13.7rem;
+}
+
+#rules_list {
+  background-color: white;
+}
+
+#restaurants {
+  background-color: whitesmoke;
+  padding: 3.5rem 0;
+  height: 1000px;
+}
+
+.show_restaurants {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.rest_card {
+  margin: .5rem 0;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.rest_card img {
+  height: 11rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.rest_card span {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
 }
 /*# sourceMappingURL=main.css.map */

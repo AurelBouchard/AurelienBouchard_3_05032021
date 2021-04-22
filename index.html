@@ -11,12 +11,12 @@
 
 		<script src="https://kit.fontawesome.com/37c61712f6.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="public/css/main.css" />
+        <link rel="stylesheet" href="/public/css/main.css" />
     </head>
 
     <body>
         <header>
-            <i class="fas fa-arrow-left back_to_index"></i>
+            <a href="/index.html" class="back_to_index"><i class="fas fa-arrow-left"></i></a>
             <span class="logo">ohmyfood</span>
         </header>
 
@@ -34,53 +34,67 @@
 
 
         <section id="rules_list">
-            <h1>Fonctionnement</h1>
+            <div class="container">
+                <h1>Fonctionnement</h1>
 
-            <div class="rolling_rules">
-                <div class="rule">
-                    <span class="chip">1</span>
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>Choisissez votre restaurant</span>
-                </div>
-                <div class="rule">
-                    <span class="chip">2</span>
-                    <i class="fas fa-list-ul"></i>
-                    <span>Composez votre menu</span>
-                </div>
-                <div class="rule">
-                    <span class="chip">3</span>
-                    <i class="fas fa-store"></i>
-                    <span>Dégustez au restaurant</span>
+                <div class="rolling_rules">
+                    <div class="rule">
+                        <span class="chip">1</span>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Choisissez votre restaurant</span>
+                    </div>
+                    <div class="rule">
+                        <span class="chip">2</span>
+                        <i class="fas fa-list-ul"></i>
+                        <span>Composez votre menu</span>
+                    </div>
+                    <div class="rule">
+                        <span class="chip">3</span>
+                        <i class="fas fa-store"></i>
+                        <span>Dégustez au restaurant</span>
+                    </div>
                 </div>
             </div>
         </section>
 
 
         <section id="restaurants">
-            <h1>Restaurants</h1>
+            <div class="container">
+                <h1>Restaurants</h1>
 
-            <div class="show_restaurants">
-                <a href="" class="rest_card">
-                    <img src="#" alt="la_palette_du_gout">
-                    <span class="flag_new">Nouveau</span>
-                    <div class="bottom_stripe">
-                        <h2>nom du resto</h2>
-                        <p>quartier</p>                       
-                        <i class="far fa-heart"></i>
-                    </div>
-                </a>
+                <div class="show_restaurants">
+                    <a href="/pages/la_palette_du_gout.html" class="rest_card">
+                        <img src="/public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="la_palette_du_gout">
+                        <span class="flag_new">Nouveau</span>
+                        <div class="bottom_stripe">
+                            <h2>nom du resto</h2>
+                            <p>quartier</p>                       
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </a>
+                    <a href="/pages/la_palette_du_gout.html" class="rest_card">
+                        <img src="#" alt="la_palette_du_gout">
+                        <span class="flag_new">Nouveau</span>
+                        <div class="bottom_stripe">
+                            <h2>nom du resto</h2>
+                            <p>quartier</p>                       
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p class="title">ohmyfood</p>
-            <ul>
-                <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-                <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
-                <li>Mentions légales</li>
-                <li>Contact</li>
-            </ul>
-            
+            <div class="container">
+                <p class="title">ohmyfood</p>
+                <ul>
+                    <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+                    <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+                    <li>Mentions légales</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
         </footer>
     </body>
 

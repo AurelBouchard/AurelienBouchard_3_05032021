@@ -1,0 +1,24 @@
+.btn {
+    display:inline-block;
+
+    color:$btn-text-color;
+    font-size: $FS_btn;
+
+    background-color: $color-sec;
+    background-image: linear-gradient(to left top, $color-prim, hsla(1,1,1,0));
+    border-radius:2rem;
+    
+    //padding:1rem 1.5rem;
+    padding:1rem 0;
+
+    transition: background-color 80ms 40ms;
+
+    &:active{
+        color:$btn-text-color;
+        background-color: $color-prim;
+        transition: background-color 80ms 40ms;
+    }
+    &:visited{
+        color:$btn-text-color;
+    }
+}

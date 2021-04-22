@@ -1,5 +1,51 @@
+// ##### RESET CSS #########################################
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
-  }
+}
+
+// ##### BLOCKS #########################################
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+// ##### PARTICULAR ELEMENTS #########################################
+
+.logo {
+    font-size: $FS_logo;
+}
+
+.welcome_pic {
+    height: 200px;
+    width: 100%;
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
+// ##### SMALL ELEMENTS #########################################
+
+a{
+    &:active{
+        color:$color-prim;
+    }
+    &:visited{
+        color:black;
+    }
+}
+
+h1 {
+    font-size: $FS_h1;
+}
+
+ul, li, ol {
+    list-style: none;
+}
