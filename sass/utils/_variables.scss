@@ -1,0 +1,77 @@
+// ##### COLOURS #################################
+
+$color-prim:    hsl(267, 66%, 60%);     //#9356DC
+$color-sec:     hsl(317, 100%, 74%);    //#FF79DA
+$color-ter:     hsl(165, 56%, 74%);     //#99E2D0
+
+$color-prim-light:  hsl(267, 100%, 96%);    //#f5edff
+$color-ter-dark:    hsl(165, 100%, 26%);    //#008766
+
+$color-lightgrey:   hsl(0, 0%, 96%);    //#f6f6f6
+$color-mediumgrey:  hsl(0, 0%, 92%);    //#eaeaea
+$color-darkgrey:    hsl(0, 0%, 21%);    //#353535
+
+$default-color:     black;
+$btn-text-color:    white;
+$footer-color:      white;
+
+// ##### FONTS SIZES ###############################
+
+// $FS_main: 1rem;
+$FS_main: 16px;
+
+$FS_logo: 30px;
+$FS_back: 20px;
+
+$FS_map_index:(
+    h1:$FS_main*1.5,
+    h2:$FS_main*1.125, // valeur ok
+    h3:$FS_main*1.125,
+    h4:$FS_main*1,
+    h5:17px,
+    h6:$FS_main*0.8
+);
+
+$FS_map_base:(
+    h1:$FS_main*1.5,
+    h2:$FS_main*1.25,
+    h3:$FS_main*1.25,
+    h4:$FS_main*1,
+    h5:17px,
+    h6:$FS_main*0.8
+);
+
+$FS_intro_p: $FS_main*1.125;
+
+
+
+$FS_btn:    $FS_main;
+$FS_flag:   $FS_main*0.86;
+
+
+
+$FS_foot_title: $FS_main*1.125;
+$FS_foot_li_1:  15.5px;
+$FS_foot_li_2:  $FS_main*1;
+
+
+
+
+
+
+
+// ##### DIMENSIONS ###############################
+
+$heart_size:    21px;
+$shape_thikness: 1px;
+
+
+
+
+// ##### VARIOUS ###################################
+
+$card_radius:   1rem;
+$menu_radius:   2rem;
+
+$h_levels: h1, h2, h3, h4, h5, h6;
+

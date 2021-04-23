@@ -13,6 +13,8 @@
 
     transition: background-color 80ms 40ms;
 
+    @extend %shadow;
+
     &:active{
         color:$btn-text-color;
         background-color: $color-prim;

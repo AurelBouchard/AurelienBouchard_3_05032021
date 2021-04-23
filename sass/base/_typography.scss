@@ -34,6 +34,7 @@
   font-style: normal;
 }
 
+// FONTS SIZES ARE SET IN VARIABLES !!!!!!!!!!!!!!!!
 
 
 body {
@@ -48,7 +49,16 @@ body {
   font-family: "Shrikhand";
 }
 
-#introduction p {
+.h1 {
+  font-family: "Roboto-bold";
+}
+.h2 {
+  font-family: "Roboto-medium";
+}
+.h3 {
+  font-family: "Roboto-light";
+}
+.h5 {
   font-family: "Roboto-light";
 }
 
@@ -60,6 +70,3 @@ body {
   font-family: "Roboto-medium";
 }
 
-h1 {
-  font-family: "Roboto-medium";
-}

@@ -1,0 +1,91 @@
+@each $h_TAG_level in $h_levels {
+    .#{$h_TAG_level} {
+        font-size: map-get($FS_map_index, $h_TAG_level)
+    }
+  }
+
+
+#locate{
+    text-align: center;
+    & i{
+        padding:1rem;
+    }
+    & span{
+        padding-right: 1rem;
+    }
+}
+
+
+#introduction {
+    text-align: center;
+    background-color: $color-lightgrey;
+    padding: 2.375rem 0;
+    & .h1{
+        line-height: 1.75rem;
+        padding: 0 4rem;
+    }
+    & .h3 {
+        padding: .8rem;
+    }
+    & .btn {
+        margin: 1rem;
+        width: 13.7rem;
+    }
+}
+
+
+#rules_list {
+    background-color: white;
+}
+
+
+#restaurants {
+    background-color: $color-lightgrey;
+    padding: 3.5rem 0;
+
+    //temporaire :
+    height: 1000px;
+}
+
+.show_restaurants{
+    margin-top: .875rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.rest_card {
+    margin:.5rem 0;
+    //border-radius: 1rem;
+    position: relative;
+        & img{
+            height: 10.875rem;
+            width:100%;
+            object-fit: cover;
+            border-radius: $card_radius $card_radius 0 0;
+        }
+        & .flag_new {
+            position: absolute;
+            top:0.7rem;
+            right:0.7rem;
+        }
+        & .bottom_stripe{
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: .75rem .8125rem;
+            & .h2 {
+                //color: red;
+            }
+            & .h3 {
+               // color: green;
+            }
+            & .heart_place{
+                //border: 1px solid red;
+                & .shape{
+                    font-size: nth($heart_size, 1);
+                }
+            }
+        }
+    @extend %card_style;
+}

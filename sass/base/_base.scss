@@ -3,10 +3,31 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    @extend %clean_text;
 }
 
+body{
+    background-color: $color-mediumgrey;
+    @extend %clean_text;
+}
+
+@each $h_level in $h_levels {
+  #{$h_level} {
+      @extend %reset_h_style;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 // ##### BLOCKS #########################################
+// a mettre dans layout
 
 .container {
     width: 90%;
@@ -14,11 +35,8 @@
 }
 
 
-// ##### PARTICULAR ELEMENTS #########################################
 
-.logo {
-    font-size: $FS_logo;
-}
+// ##### PARTICULAR ELEMENTS #########################################
 
 .welcome_pic {
     height: 200px;
@@ -37,14 +55,8 @@ a{
     &:active{
         color:$color-prim;
     }
-    &:visited{
-        color:black;
-    }
 }
 
-h1 {
-    font-size: $FS_h1;
-}
 
 ul, li, ol {
     list-style: none;

@@ -1,8 +1,10 @@
 footer {
+    * {
+        color: $footer-color;
+    }
     background-color: $color-darkgrey;
-    color: white;
 
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 1.5rem;
 
     & .title {
         font-size: $FS_foot_title;
