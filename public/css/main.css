@@ -367,28 +367,6 @@ input[type="checkbox"] {
   }
 }
 
-@-webkit-keyframes filling {
-  100% {
-  }
-}
-
-@keyframes filling {
-  100% {
-  }
-}
-
-@-webkit-keyframes fade_in {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade_in {
-  100% {
-    opacity: 1;
-  }
-}
-
 .loader__logo {
   position: fixed;
   top: 10%;
@@ -399,12 +377,8 @@ input[type="checkbox"] {
   font-family: "Shrikhand";
   font-size: 50px;
   color: white;
-  -webkit-animation-name: ohmy;
-          animation-name: ohmy;
-  -webkit-animation-duration: 1400ms;
-          animation-duration: 1400ms;
-  -webkit-animation-delay: 1600ms;
-          animation-delay: 1600ms;
+  -webkit-animation: ohmy 1400ms 1600ms, loading_done;
+          animation: ohmy 1400ms 1600ms, loading_done;
 }
 
 @media screen and (orientation: portrait) {
