@@ -1,0 +1,121 @@
+
+
+    .loader__logo{
+        position: fixed;
+        top:10%;
+        z-index: 99;
+        opacity:0;
+        background: none;
+
+        text-align: center;
+
+        @media screen and (orientation :portrait){
+            width: 100%;
+        }
+        @media screen and (orientation :landscape){
+            right:15%;
+        }
+        font-family: "Shrikhand";
+        font-size: 50px;
+        color:white;
+
+        animation-name: ohmy;
+        animation-duration: 1400ms;
+        animation-delay: 1600ms;
+    }
+    
+
+    .loader {
+        position: fixed;
+        z-index: 90;
+        top: 0;
+        display: flex;
+        justify-content: stretch;
+        align-items: stretch;
+        flex-flow: row wrap;
+
+        width:100%;
+        height:100%;
+        
+        $rand:random(2);
+        @media screen and (orientation :portrait){
+            background-image: url(nth($back-portrait, $rand));
+        }
+        @media screen and (orientation :landscape){
+            background-image: url(nth($back-landscape, $rand));
+        }
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        & .flap {
+            width: 20%;
+            background-color: white;
+
+            // upside of loader's flap including central lign
+            @for $j from 4 through 0 { // vertical
+
+                @for $i from 5 through 1 { // horizontal
+                    &:nth-child(#{$i+$j*5}){
+                        animation-name: _flip;
+                        animation-duration: $flip-duration;
+                        
+                        // @if #{$i+$j*5} == 25 { animation-delay: 1s;}
+                        // @else {
+                            animation-delay: (6 -($i)) * $delay-H + nth($delay-V, $j+1);//}
+                        
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+
+            // downside of loader's flap
+            @for $j from 5 through 8 { // vertical
+
+                @for $i from 5 through 1 { // horizontal
+                    &:nth-child(#{$i+$j*5}){
+                        animation-name: _flip;
+                        animation-duration: $flip-duration;
+
+                        animation-delay: (6 -($i)) * $delay-H + nth($delay-V, abs($j -(9)));
+                        
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+        }
+
+        animation-name: loading_done;
+        animation-delay: 2800ms;
+        animation-duration: 150ms;
+        animation-fill-mode: forwards;
+    }
+
+
+@keyframes _flip{
+    80% {
+        opacity:1;
+    }
+    100% {
+        transform: skew(90deg);
+        scale: 0;
+        opacity:0;
+    }
+}
+
+@keyframes ohmy{
+    45% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes loading_done{
+    100% {
+        opacity:0;
+        transform: scale(0);
+    }
+}

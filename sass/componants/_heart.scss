@@ -1,0 +1,147 @@
+%heart{
+    position: absolute;
+    top: 12rem; // devra changer sur les pages de resto !!
+    right:1.5rem;
+
+    width:$heart_size*1.1;
+
+    display: flex;
+    & .shape{ //pourtour noir
+        line-height:  $heart_size;
+        font-size: $heart_size;
+    }
+
+    & label {
+        line-height:  $heart_size;
+        font-size: $heart_size+(-(2*$shape_thickness));
+        position: relative;
+        left:-($heart_size)+$shape_thickness;
+        top:$shape_thickness/2;
+    }
+    & .filling{ // fond blanc pour réduire le pourtour
+        color:rgb(255, 255, 255);
+    }
+    & .bottle{
+        color: $color-prim;
+        font-size: $heart_size*2;
+        position: relative;
+        left:-($heart_size*3.7);
+        top:-($heart_size*0.9);
+        transform-origin: (95% 20%);
+        transform : scale(0);
+        opacity: 0;
+    }
+    & .flow{
+        color: $color-prim;
+        font-size: $heart_size;
+        height:$heart_size;
+        position: relative;
+        left:-($heart_size*3.93);
+        top:-($heart_size*1);
+        opacity: 0;
+        scale:(0 0);
+    }
+
+    & .mask{
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(to left top, $color-prim, $color-sec);
+        font-size: $heart_size;
+        height:$heart_size;
+        position: relative;
+        left:-($heart_size*4.94);
+        top:($heart_size*0.02);
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    & input:checked{
+        & + .shape{
+            opacity: 0;
+            //transition: opacity 500ms 1500ms;
+            & + label{
+                z-index: 50;
+                transition: z-index 0ms 2s;
+
+                & .filling{
+                    opacity: 0;
+                    //transition: opacity 500ms 2000ms;
+                }
+                & + .bottle{
+                    animation-name: bottle;
+                    animation-delay: 80ms;
+                    animation-duration: 2000ms;
+                
+                    & + .flow{
+                    animation-name: flow;
+                    animation-delay: 160ms;
+                    animation-duration: 1800ms;
+
+                    & + .mask{
+                        transform: scale(1);
+                        opacity:1;
+                        transition: opacity 100ms 2000ms;
+                    }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@keyframes bottle {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        opacity:1;
+    }
+    55%, 70% {
+        transform: rotate(57deg);
+    }
+    90% {
+        opacity:1;
+    }
+    99% {
+        scale:1;
+    }
+    100% {
+        scale:0;
+    }
+}
+
+@keyframes flow {
+    40%{
+        opacity:1;
+        scale:(1);
+    }
+    60% {
+        transform: scale(1);
+        transform: translate(0px, $heart_size/2);
+    }
+    90% {
+        scale:1;
+    }
+    95% {
+        scale:1.2;
+    }
+    100% {
+        opacity:1;
+        scale:(1);
+        transform: translate(0, $heart_size);
+    }
+}
+
+@keyframes filling {
+    100% {
+    }
+
+}
+
+@keyframes fade_in {
+    100% {
+        opacity:1;
+    }
+}

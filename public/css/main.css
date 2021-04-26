@@ -117,24 +117,40 @@ ul, li, ol {
   list-style: none;
 }
 
+input[type="checkbox"] {
+  display: none;
+}
+
 .btn {
   display: inline-block;
+  position: relative;
   color: white;
   font-size: 16px;
-  background-color: #ff7ad9;
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(rgba(3, 3, 3, 0)));
-  background-image: linear-gradient(to left top, #9256dc, rgba(3, 3, 3, 0));
   border-radius: 2rem;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
+  background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
   padding: 1rem 0;
-  -webkit-transition: background-color 80ms 40ms;
-  transition: background-color 80ms 40ms;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2rem;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#ff7ad9), to(#9256dc));
+  background-image: linear-gradient(to right top, #ff7ad9, #9256dc);
+  opacity: 0;
 }
 
 .btn:active {
   color: white;
-  background-color: #9256dc;
-  -webkit-transition: background-color 80ms 40ms;
-  transition: background-color 80ms 40ms;
+}
+
+.btn:active::before {
+  opacity: 1;
 }
 
 .btn:visited {
@@ -147,6 +163,865 @@ ul, li, ol {
   font-size: 13.76px;
   padding: 0.5rem 0.8rem 0.3rem 0.8rem;
   border-radius: 0.2rem;
+}
+
+.rest_card .heart_place {
+  position: absolute;
+  top: 12rem;
+  right: 1.5rem;
+  width: 24.2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rest_card .heart_place .shape {
+  line-height: 22px;
+  font-size: 22px;
+}
+
+.rest_card .heart_place label {
+  line-height: 22px;
+  font-size: 20px;
+  position: relative;
+  left: -21px;
+  top: 0.5px;
+}
+
+.rest_card .heart_place .filling {
+  color: white;
+}
+
+.rest_card .heart_place .bottle {
+  color: #9256dc;
+  font-size: 44px;
+  position: relative;
+  left: -81.4px;
+  top: -19.8px;
+  -webkit-transform-origin: 95% 20%;
+          transform-origin: 95% 20%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+
+.rest_card .heart_place .flow {
+  color: #9256dc;
+  font-size: 22px;
+  height: 22px;
+  position: relative;
+  left: -86.46px;
+  top: -22px;
+  opacity: 0;
+  scale: 0 0;
+}
+
+.rest_card .heart_place .mask {
+  color: transparent;
+  background-clip: text;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
+  background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
+  font-size: 22px;
+  height: 22px;
+  position: relative;
+  left: -108.68px;
+  top: 0.44px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.rest_card .heart_place input:checked + .shape {
+  opacity: 0;
+}
+
+.rest_card .heart_place input:checked + .shape + label {
+  z-index: 50;
+  -webkit-transition: z-index 0ms 2s;
+  transition: z-index 0ms 2s;
+}
+
+.rest_card .heart_place input:checked + .shape + label .filling {
+  opacity: 0;
+}
+
+.rest_card .heart_place input:checked + .shape + label + .bottle {
+  -webkit-animation-name: bottle;
+          animation-name: bottle;
+  -webkit-animation-delay: 80ms;
+          animation-delay: 80ms;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+}
+
+.rest_card .heart_place input:checked + .shape + label + .bottle + .flow {
+  -webkit-animation-name: flow;
+          animation-name: flow;
+  -webkit-animation-delay: 160ms;
+          animation-delay: 160ms;
+  -webkit-animation-duration: 1800ms;
+          animation-duration: 1800ms;
+}
+
+.rest_card .heart_place input:checked + .shape + label + .bottle + .flow + .mask {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity 100ms 2000ms;
+  transition: opacity 100ms 2000ms;
+}
+
+@-webkit-keyframes bottle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+  }
+  55%, 70% {
+    -webkit-transform: rotate(57deg);
+            transform: rotate(57deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  99% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+
+@keyframes bottle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+  }
+  55%, 70% {
+    -webkit-transform: rotate(57deg);
+            transform: rotate(57deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  99% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+
+@-webkit-keyframes flow {
+  40% {
+    opacity: 1;
+    scale: 1;
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: translate(0px, 11px);
+            transform: translate(0px, 11px);
+  }
+  90% {
+    scale: 1;
+  }
+  95% {
+    scale: 1.2;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    -webkit-transform: translate(0, 22px);
+            transform: translate(0, 22px);
+  }
+}
+
+@keyframes flow {
+  40% {
+    opacity: 1;
+    scale: 1;
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: translate(0px, 11px);
+            transform: translate(0px, 11px);
+  }
+  90% {
+    scale: 1;
+  }
+  95% {
+    scale: 1.2;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    -webkit-transform: translate(0, 22px);
+            transform: translate(0, 22px);
+  }
+}
+
+@-webkit-keyframes filling {
+  100% {
+  }
+}
+
+@keyframes filling {
+  100% {
+  }
+}
+
+@-webkit-keyframes fade_in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader__logo {
+  position: fixed;
+  top: 10%;
+  z-index: 99;
+  opacity: 0;
+  background: none;
+  text-align: center;
+  font-family: "Shrikhand";
+  font-size: 50px;
+  color: white;
+  -webkit-animation-name: ohmy;
+          animation-name: ohmy;
+  -webkit-animation-duration: 1400ms;
+          animation-duration: 1400ms;
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
+}
+
+@media screen and (orientation: portrait) {
+  .loader__logo {
+    width: 100%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .loader__logo {
+    right: 15%;
+  }
+}
+
+.loader {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation-name: loading_done;
+          animation-name: loading_done;
+  -webkit-animation-delay: 2800ms;
+          animation-delay: 2800ms;
+  -webkit-animation-duration: 150ms;
+          animation-duration: 150ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media screen and (orientation: portrait) {
+  .loader {
+    background-image: url("/public/images/loader/P1.jpg");
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .loader {
+    background-image: url("/public/images/loader/L1.jpg");
+  }
+}
+
+.loader .flap {
+  width: 20%;
+  background-color: white;
+}
+
+.loader .flap:nth-child(25) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(24) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 440ms;
+          animation-delay: 440ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(23) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 660ms;
+          animation-delay: 660ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(22) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 880ms;
+          animation-delay: 880ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(21) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(20) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 374ms;
+          animation-delay: 374ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(19) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 594ms;
+          animation-delay: 594ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(18) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 814ms;
+          animation-delay: 814ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(17) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1034ms;
+          animation-delay: 1034ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(16) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1254ms;
+          animation-delay: 1254ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(15) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 481.8ms;
+          animation-delay: 481.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(14) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 701.8ms;
+          animation-delay: 701.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(13) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 921.8ms;
+          animation-delay: 921.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(12) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1141.8ms;
+          animation-delay: 1141.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(11) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1361.8ms;
+          animation-delay: 1361.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(10) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 557.26ms;
+          animation-delay: 557.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(9) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 777.26ms;
+          animation-delay: 777.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(8) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 997.26ms;
+          animation-delay: 997.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(7) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1217.26ms;
+          animation-delay: 1217.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(6) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1437.26ms;
+          animation-delay: 1437.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(5) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 610.082ms;
+          animation-delay: 610.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(4) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 830.082ms;
+          animation-delay: 830.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(3) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1050.082ms;
+          animation-delay: 1050.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(2) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1270.082ms;
+          animation-delay: 1270.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(1) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1490.082ms;
+          animation-delay: 1490.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(30) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 374ms;
+          animation-delay: 374ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(29) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 594ms;
+          animation-delay: 594ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(28) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 814ms;
+          animation-delay: 814ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(27) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1034ms;
+          animation-delay: 1034ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(26) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1254ms;
+          animation-delay: 1254ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(35) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 481.8ms;
+          animation-delay: 481.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(34) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 701.8ms;
+          animation-delay: 701.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(33) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 921.8ms;
+          animation-delay: 921.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(32) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1141.8ms;
+          animation-delay: 1141.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(31) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1361.8ms;
+          animation-delay: 1361.8ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(40) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 557.26ms;
+          animation-delay: 557.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(39) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 777.26ms;
+          animation-delay: 777.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(38) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 997.26ms;
+          animation-delay: 997.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(37) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1217.26ms;
+          animation-delay: 1217.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(36) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1437.26ms;
+          animation-delay: 1437.26ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(45) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 610.082ms;
+          animation-delay: 610.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(44) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 830.082ms;
+          animation-delay: 830.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(43) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1050.082ms;
+          animation-delay: 1050.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(42) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1270.082ms;
+          animation-delay: 1270.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.loader .flap:nth-child(41) {
+  -webkit-animation-name: _flip;
+          animation-name: _flip;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 1490.082ms;
+          animation-delay: 1490.082ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes _flip {
+  80% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: skew(90deg);
+            transform: skew(90deg);
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes _flip {
+  80% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: skew(90deg);
+            transform: skew(90deg);
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes ohmy {
+  45% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+@keyframes ohmy {
+  45% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+@-webkit-keyframes loading_done {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes loading_done {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
 }
 
 header {
@@ -280,6 +1155,7 @@ footer li i {
 }
 
 .rest_card {
+  background-color: white;
   margin: .5rem 0;
   position: relative;
 }
@@ -299,21 +1175,17 @@ footer li i {
 }
 
 .rest_card .bottom_stripe {
-  margin: 0;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: .75rem .8125rem;
-}
-
-.rest_card .bottom_stripe .heart_place .shape {
-  font-size: 21px;
 }
 /*# sourceMappingURL=main.css.map */

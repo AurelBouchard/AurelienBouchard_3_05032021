@@ -22,10 +22,6 @@ body{
 
 
 
-
-
-
-
 // ##### BLOCKS #########################################
 // a mettre dans layout
 
@@ -51,7 +47,7 @@ body{
 
 // ##### SMALL ELEMENTS #########################################
 
-a{
+a {
     &:active{
         color:$color-prim;
     }
@@ -61,3 +57,9 @@ a{
 ul, li, ol {
     list-style: none;
 }
+
+
+input[type="checkbox"]{
+        display:none;
+}
+

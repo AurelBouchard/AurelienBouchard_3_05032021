@@ -62,8 +62,8 @@ $FS_foot_li_2:  $FS_main*1;
 
 // ##### DIMENSIONS ###############################
 
-$heart_size:    21px;
-$shape_thikness: 1px;
+$heart_size:    22px; // 21 ou 22
+$shape_thickness: 1px;
 
 
 
@@ -75,3 +75,18 @@ $menu_radius:   2rem;
 
 $h_levels: h1, h2, h3, h4, h5, h6;
 
+// ##### LOADER #####
+
+$delay-H: 220ms;
+$coef:0.7;
+$delay-V:   $delay-H*$coef*$coef*$coef*$coef+$delay-H*$coef*$coef*$coef+$delay-H*$coef*$coef+$delay-H*$coef,
+            $delay-H*$coef*$coef*$coef+$delay-H*$coef*$coef+$delay-H*$coef,
+            $delay-H*$coef*$coef+$delay-H*$coef,
+            $delay-H*$coef,
+            0ms ; // MUST BE 4 values in ms and 1 more at 0ms.
+$flip-duration: 400ms;
+
+$back-portrait :"/public/images/loader/P1.jpg",
+                "/public/images/loader/P2.jpg";
+$back-landscape :   "/public/images/loader/L1.jpg",
+                    "/public/images/loader/L2.jpg";
