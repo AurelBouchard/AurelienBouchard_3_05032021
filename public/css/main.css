@@ -19,31 +19,31 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
   font-family: "Shrikhand";
-  src: url("public/fonts/shrikhand/Shrikhand-Regular.otf"), url("public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
+  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"), url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf"), url("public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-bold";
-  src: url("public/fonts/roboto/Roboto-Bold.ttf");
+  src: url("/public/fonts/roboto/Roboto-Bold.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-medium";
-  src: url("public/fonts/roboto/Roboto-Medium.ttf");
+  src: url("/public/fonts/roboto/Roboto-Medium.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-regular";
-  src: url("public/fonts/roboto/Roboto-Regular.ttf");
+  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-light";
-  src: url("public/fonts/roboto/Roboto-Light.ttf");
+  src: url("/public/fonts/roboto/Roboto-Light.ttf");
   font-style: normal;
 }
 
@@ -219,6 +219,7 @@ input[type="checkbox"] {
 .rest_card .heart_place .mask {
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
   background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
   font-size: 22px;
@@ -377,8 +378,8 @@ input[type="checkbox"] {
   font-family: "Shrikhand";
   font-size: 50px;
   color: white;
-  -webkit-animation: ohmy 1400ms 1600ms, loading_done;
-          animation: ohmy 1400ms 1600ms, loading_done;
+  -webkit-animation: ohmy 1400ms 1600ms, loading_done 1ms;
+          animation: ohmy 1400ms 1600ms, loading_done 1ms;
 }
 
 @media screen and (orientation: portrait) {
@@ -941,9 +942,8 @@ input[type="checkbox"] {
     opacity: 1;
   }
   100% {
-    -webkit-transform: skew(90deg);
-            transform: skew(90deg);
-    scale: 0;
+    -webkit-transform: skew(90deg) scale(0);
+            transform: skew(90deg) scale(0);
     opacity: 0;
   }
 }
@@ -953,9 +953,8 @@ input[type="checkbox"] {
     opacity: 1;
   }
   100% {
-    -webkit-transform: skew(90deg);
-            transform: skew(90deg);
-    scale: 0;
+    -webkit-transform: skew(90deg) scale(0);
+            transform: skew(90deg) scale(0);
     opacity: 0;
   }
 }
