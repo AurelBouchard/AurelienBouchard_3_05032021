@@ -213,7 +213,8 @@ input[type="checkbox"] {
   left: -86.46px;
   top: -22px;
   opacity: 0;
-  scale: 0 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .rest_card .heart_place .mask {
@@ -288,10 +289,12 @@ input[type="checkbox"] {
     opacity: 1;
   }
   99% {
-    scale: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    scale: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 
@@ -311,60 +314,66 @@ input[type="checkbox"] {
     opacity: 1;
   }
   99% {
-    scale: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    scale: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 
 @-webkit-keyframes flow {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
   40% {
     opacity: 1;
-    scale: 1;
-  }
-  60% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform: translate(0px, 11px);
-            transform: translate(0px, 11px);
+    -webkit-transform: scale(1) translate(0, 8.8px);
+            transform: scale(1) translate(0, 8.8px);
   }
   90% {
-    scale: 1;
+    -webkit-transform: scale(1) translate(0, 19.8px);
+            transform: scale(1) translate(0, 19.8px);
   }
   95% {
-    scale: 1.2;
+    -webkit-transform: scale(1.2) translate(0, 20.9px);
+            transform: scale(1.2) translate(0, 20.9px);
   }
   100% {
-    opacity: 1;
-    scale: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
     -webkit-transform: translate(0, 22px);
             transform: translate(0, 22px);
+    opacity: 1;
   }
 }
 
 @keyframes flow {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
   40% {
     opacity: 1;
-    scale: 1;
-  }
-  60% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform: translate(0px, 11px);
-            transform: translate(0px, 11px);
+    -webkit-transform: scale(1) translate(0, 8.8px);
+            transform: scale(1) translate(0, 8.8px);
   }
   90% {
-    scale: 1;
+    -webkit-transform: scale(1) translate(0, 19.8px);
+            transform: scale(1) translate(0, 19.8px);
   }
   95% {
-    scale: 1.2;
+    -webkit-transform: scale(1.2) translate(0, 20.9px);
+            transform: scale(1.2) translate(0, 20.9px);
   }
   100% {
-    opacity: 1;
-    scale: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
     -webkit-transform: translate(0, 22px);
             transform: translate(0, 22px);
+    opacity: 1;
   }
 }
 
@@ -427,13 +436,13 @@ input[type="checkbox"] {
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("/public/images/loader/P1.jpg");
+    background-image: url("/public/images/loader/P2.jpg");
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("/public/images/loader/L1.jpg");
+    background-image: url("/public/images/loader/L2.jpg");
   }
 }
 
