@@ -73,17 +73,19 @@
                     animation-duration: 2000ms;
                 
                     & + .flow{
-                    animation-name: flow;
-                    animation-delay: 160ms;
-                    animation-duration: 1800ms;
+                        animation-name: flow;
+                        animation-delay: 160ms;
+                        animation-duration: 1800ms;
 
-                    & + .mask{
-                        transform: scale(1);
-                        opacity:1;
-                        transition: opacity 100ms 2000ms;
-                    }
+                        & + .mask{
+                            transform: scale(1);
+                            opacity:1;
+                            transition: opacity 100ms 2000ms;
+                        }
                     }
                 }
+
+                
             }
         }
     }
@@ -134,14 +136,3 @@
     }
 }
 
-@keyframes filling {
-    100% {
-    }
-
-}
-
-@keyframes fade_in {
-    100% {
-        opacity:1;
-    }
-}
