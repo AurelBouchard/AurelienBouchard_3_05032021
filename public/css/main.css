@@ -19,31 +19,31 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
   font-family: "Shrikhand";
-  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"), url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
+  src: url("public/fonts/shrikhand/Shrikhand-Regular.otf"), url("public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-bold";
-  src: url("/public/fonts/roboto/Roboto-Bold.ttf");
+  src: url("public/fonts/roboto/Roboto-Bold.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-medium";
-  src: url("/public/fonts/roboto/Roboto-Medium.ttf");
+  src: url("public/fonts/roboto/Roboto-Medium.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-regular";
-  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
+  src: url("public/fonts/roboto/Roboto-Regular.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-light";
-  src: url("/public/fonts/roboto/Roboto-Light.ttf");
+  src: url("public/fonts/roboto/Roboto-Light.ttf");
   font-style: normal;
 }
 
