@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
   font-family: "Shrikhand";
-  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"), url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf"), url("public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
+  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"), url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf"), url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
   font-style: normal;
 }
 
@@ -436,13 +436,13 @@ input[type="checkbox"] {
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("/public/images/loader/P2.jpg");
+    background-image: url("/public/images/loader/P1.jpg");
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("/public/images/loader/L2.jpg");
+    background-image: url("/public/images/loader/L1.jpg");
   }
 }
 
