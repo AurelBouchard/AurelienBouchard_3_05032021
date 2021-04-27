@@ -20,7 +20,8 @@
         font-size: 50px;
         color:white;
 
-        animation: ohmy 1400ms 1600ms, loading_done 1ms;
+        animation: ohmy 1400ms 1600ms, loading_done 1ms 3000ms;
+        animation-fill-mode: forwards;
     }
     
 
@@ -29,8 +30,8 @@
         z-index: 90;
         top: 0;
         display: flex;
-        justify-content: stretch;
-        align-items: stretch;
+        //justify-content: flex-start;
+        //align-content: flex-start;
         flex-flow: row wrap;
 
         width:100%;
@@ -49,7 +50,8 @@
 
         & .flap {
             width: 20%;
-            //transform: scale(1.05);
+            padding: 1px;
+            margin: -1px;
             background-color: white;
 
             // upside of loader's flap including central lign
