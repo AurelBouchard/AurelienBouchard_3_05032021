@@ -2,10 +2,9 @@
 
 $color-prim:    hsl(267, 66%, 60%);     //#9356DC
 $color-sec:     hsl(317, 100%, 74%);    //#FF79DA
-$color-ter:     hsl(165, 56%, 74%);     //#99E2D0
+$color-ter:     hsl(165, 56%, 76%);     //#99E2D0
 
 $color-prim-light:  hsl(267, 100%, 96%);    //#f5edff
-$color-ter-dark:    hsl(165, 100%, 26%);    //#008766
 
 $color-lightgrey:   hsl(0, 0%, 96%);    //#f6f6f6
 $color-mediumgrey:  hsl(0, 0%, 92%);    //#eaeaea
@@ -86,7 +85,7 @@ $delay-V:   $delay-H*$coef*$coef*$coef*$coef+$delay-H*$coef*$coef*$coef+$delay-H
             0ms ; // MUST BE 4 values in ms and 1 more at 0ms.
 $flip-duration: 400ms;
 
-$back-portrait :"/public/images/loader/P1.jpg",
-                "/public/images/loader/P2.jpg";
-$back-landscape :   "/public/images/loader/L1.jpg",
-                    "/public/images/loader/L2.jpg";
+$back-portrait :"https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P1.jpg",
+                "https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P2.jpg";
+$back-landscape :   "https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L1.jpg",
+                    "https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L2.jpg";

@@ -1,6 +1,21 @@
 .flag_new {
-    background-color: $color-ter;
-    color: $color-ter-dark;
+    $flag-bg-color: $color-ter;
+
+    background-color: $flag-bg-color;
+    $light-offset:0;
+
+    @if (lightness($flag-bg-color) > (50% - 15%)) and (lightness($flag-bg-color) < (50% + 15%)) { // luminosite intermédiaire
+        $light-offset:12%;
+    } @else {
+        $light-offset:(lightness($flag-bg-color) - 50%);
+    }
+
+    @if (lightness($flag-bg-color) > 50%){
+        color:saturate(darken($flag-bg-color, 2*$light-offset ), 100%);
+    } @else {
+        color:saturate(lighten($flag-bg-color, abs(2*$light-offset) ), 100%);
+    }
+
 
     font-size: $FS_flag;
     padding: 0.5rem 0.8rem 0.3rem 0.8rem;
