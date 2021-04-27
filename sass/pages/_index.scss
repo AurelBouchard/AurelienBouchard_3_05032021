@@ -83,6 +83,8 @@
             }
         }
         & .heart_place{
+            top: 12rem;
+            right:1.5rem;
             @extend %heart;
 
         }
