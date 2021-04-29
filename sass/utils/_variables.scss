@@ -14,6 +14,11 @@ $default-color:     black;
 $btn-text-color:    white;
 $footer-color:      white;
 
+$bg-rest_card:      white;
+$bg-body:           $color-mediumgrey;
+$bg-main:           $color-lightgrey;
+
+
 // ##### FONTS SIZES ###############################
 
 // $FS_main: 1rem;
@@ -22,31 +27,19 @@ $FS_main: 16px;
 $FS_logo: 30px;
 $FS_back: 20px;
 
-$FS_map_index:(
+$FS_map:(
     h1:$FS_main*1.5,
     h2:$FS_main*1.125, // valeur ok
     h3:$FS_main*1.125,
     h4:$FS_main*1,
-    h5:17px,
-    h6:$FS_main*0.8
+    h5: 17px,
+    h6: 15px
 );
-
-$FS_map_base:(
-    h1:$FS_main*1.5,
-    h2:$FS_main*1.25,
-    h3:$FS_main*1.25,
-    h4:$FS_main*1,
-    h5:17px,
-    h6:$FS_main*0.8
-);
-
-$FS_intro_p: $FS_main*1.125;
 
 
 
 $FS_btn:    $FS_main;
 $FS_flag:   $FS_main*0.86;
-
 
 
 $FS_foot_title: $FS_main*1.125;
@@ -61,10 +54,12 @@ $FS_foot_li_2:  $FS_main*1;
 
 // ##### DIMENSIONS ###############################
 
-$heart_size:    22px; // 21 ou 22
+$heart_size: 22px;
 $shape_thickness: 1px;
 
+$welcome_pic_height: 16.125rem; //258px
 
+$check_size : 1.25rem; //20px;
 
 
 // ##### VARIOUS ###################################

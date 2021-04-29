@@ -8,42 +8,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-.rest_card, .btn {
-  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
-          box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
+.rest_card, .main .choice .mealcard label, .btn {
+  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
+          box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
 }
 
-.rest_card {
+.rest_card, .main .choice .mealcard label {
   border-radius: 1rem;
 }
 
 @font-face {
   font-family: "Shrikhand";
-  src: url("/public/fonts/shrikhand/Shrikhand-Regular.otf"), url("/public/fonts/shrikhand/shrikhand-regular-webfont.ttf"), url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
+  src: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-bold";
-  src: url("/public/fonts/roboto/Roboto-Bold.ttf");
+  src: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/roboto/Roboto-Bold.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-medium";
-  src: url("/public/fonts/roboto/Roboto-Medium.ttf");
+  src: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/roboto/Roboto-Medium.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-regular";
-  src: url("/public/fonts/roboto/Roboto-Regular.ttf");
+  src: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/roboto/Roboto-Regular.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto-light";
-  src: url("/public/fonts/roboto/Roboto-Light.ttf");
+  src: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/roboto/Roboto-Light.ttf");
   font-style: normal;
 }
 
@@ -75,6 +75,14 @@ body {
   font-family: "Roboto-light";
 }
 
+.h6 {
+  font-family: "Roboto-light";
+}
+
+.entree_plat_dessert {
+  font-family: "Roboto-light";
+}
+
 .btn {
   font-family: "Roboto-medium";
 }
@@ -88,25 +96,28 @@ body {
   padding: 0;
 }
 
-body {
-  background-color: #ebebeb;
+.h1 {
+  font-size: 24px;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
+.h2 {
+  font-size: 18px;
 }
 
-.welcome_pic {
-  height: 200px;
-  width: 100%;
+.h3 {
+  font-size: 18px;
 }
 
-.welcome_pic img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.h4 {
+  font-size: 16px;
+}
+
+.h5 {
+  font-size: 17px;
+}
+
+.h6 {
+  font-size: 15px;
 }
 
 a:active {
@@ -127,30 +138,19 @@ input[type="checkbox"] {
   color: white;
   font-size: 16px;
   border-radius: 2rem;
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
-  background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#ff7ad9), color-stop(#9256dc), to(#ff7ad9));
+  background-image: linear-gradient(to left top, #ff7ad9, #9256dc, #ff7ad9);
+  background-size: 1000%, 100%;
+  background-position: 0 0;
   padding: 1rem 0;
 }
 
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 2rem;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#ff7ad9), to(#9256dc));
-  background-image: linear-gradient(to right top, #ff7ad9, #9256dc);
-  opacity: 0;
-}
-
 .btn:active {
-  color: white;
-}
-
-.btn:active::before {
-  opacity: 1;
+  background-position: 100% 0;
+  -webkit-transition-delay: 20ms;
+          transition-delay: 20ms;
+  -webkit-transition-duration: 140ms;
+          transition-duration: 140ms;
 }
 
 .btn:visited {
@@ -158,14 +158,14 @@ input[type="checkbox"] {
 }
 
 .flag_new {
-  background-color: #98e2cf;
-  color: #008563;
+  background-color: #a0e4d3;
+  color: #007a5c;
   font-size: 13.76px;
   padding: 0.5rem 0.8rem 0.3rem 0.8rem;
   border-radius: 0.2rem;
 }
 
-.rest_card .heart_place {
+form .title .heart_place, .rest_card .heart_place {
   position: absolute;
   width: 24.2px;
   display: -webkit-box;
@@ -173,24 +173,24 @@ input[type="checkbox"] {
   display: flex;
 }
 
-.rest_card .heart_place .shape {
+form .title .heart_place .shape, .rest_card .heart_place .shape {
   line-height: 22px;
   font-size: 22px;
 }
 
-.rest_card .heart_place label {
-  line-height: 22px;
+form .title .heart_place label, .rest_card .heart_place label {
+  height: 22px;
   font-size: 20px;
   position: relative;
   left: -21px;
   top: 0.5px;
 }
 
-.rest_card .heart_place .filling {
+form .title .heart_place .filling, .rest_card .heart_place .filling {
   color: white;
 }
 
-.rest_card .heart_place .bottle {
+form .title .heart_place .bottle, .rest_card .heart_place .bottle {
   color: #9256dc;
   font-size: 44px;
   position: relative;
@@ -203,7 +203,7 @@ input[type="checkbox"] {
   opacity: 0;
 }
 
-.rest_card .heart_place .flow {
+form .title .heart_place .flow, .rest_card .heart_place .flow {
   color: #9256dc;
   font-size: 22px;
   height: 22px;
@@ -215,7 +215,7 @@ input[type="checkbox"] {
           transform: scale(0);
 }
 
-.rest_card .heart_place .mask {
+form .title .heart_place .mask, .rest_card .heart_place .mask {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -231,21 +231,21 @@ input[type="checkbox"] {
           transform: scale(0);
 }
 
-.rest_card .heart_place input:checked + .shape {
+form .title .heart_place input:checked + .shape, .rest_card .heart_place input:checked + .shape {
   opacity: 0;
 }
 
-.rest_card .heart_place input:checked + .shape + label {
+form .title .heart_place input:checked + .shape + label, .rest_card .heart_place input:checked + .shape + label {
   z-index: 50;
   -webkit-transition: z-index 0ms 2s;
   transition: z-index 0ms 2s;
 }
 
-.rest_card .heart_place input:checked + .shape + label .filling {
+form .title .heart_place input:checked + .shape + label .filling, .rest_card .heart_place input:checked + .shape + label .filling {
   opacity: 0;
 }
 
-.rest_card .heart_place input:checked + .shape + label + .bottle {
+form .title .heart_place input:checked + .shape + label + .bottle, .rest_card .heart_place input:checked + .shape + label + .bottle {
   -webkit-animation-name: bottle;
           animation-name: bottle;
   -webkit-animation-delay: 80ms;
@@ -254,7 +254,7 @@ input[type="checkbox"] {
           animation-duration: 2000ms;
 }
 
-.rest_card .heart_place input:checked + .shape + label + .bottle + .flow {
+form .title .heart_place input:checked + .shape + label + .bottle + .flow, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow {
   -webkit-animation-name: flow;
           animation-name: flow;
   -webkit-animation-delay: 160ms;
@@ -263,7 +263,7 @@ input[type="checkbox"] {
           animation-duration: 1800ms;
 }
 
-.rest_card .heart_place input:checked + .shape + label + .bottle + .flow + .mask {
+form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mask, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow + .mask {
   -webkit-transform: scale(1, 0.95);
           transform: scale(1, 0.95);
   opacity: 1;
@@ -385,8 +385,10 @@ input[type="checkbox"] {
   font-family: "Shrikhand";
   font-size: 50px;
   color: white;
-  -webkit-animation: ohmy 1400ms 1600ms, loading_done 1ms;
-          animation: ohmy 1400ms 1600ms, loading_done 1ms;
+  -webkit-animation: ohmy 1400ms 1600ms, loading_done 1ms 3000ms;
+          animation: ohmy 1400ms 1600ms, loading_done 1ms 3000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @media screen and (orientation: portrait) {
@@ -408,12 +410,6 @@ input[type="checkbox"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -434,18 +430,20 @@ input[type="checkbox"] {
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("/public/images/loader/P1.jpg");
+    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P1.jpg");
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("/public/images/loader/L1.jpg");
+    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L1.jpg");
   }
 }
 
 .loader .flap {
   width: 20%;
+  padding: 1px;
+  margin: -1px;
   background-color: white;
 }
 
@@ -1004,10 +1002,41 @@ input[type="checkbox"] {
   }
 }
 
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  background-color: #ebebeb;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+* .flxR {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+* .flxC {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
 header {
   text-align: center;
-  padding-top: 1.2rem;
-  padding-bottom: .5rem;
+  padding-top: 1.25rem;
+  padding-bottom: .75rem;
   background-color: white;
   -webkit-box-shadow: 0 0 .5rem #9a9a9a;
           box-shadow: 0 0 .5rem #9a9a9a;
@@ -1025,6 +1054,7 @@ header {
 }
 
 footer {
+  margin-top: auto;
   background-color: #363636;
   padding: 1.5rem 1.5rem;
 }
@@ -1057,28 +1087,31 @@ footer li i {
   font-size: 12px;
 }
 
-.h1 {
-  font-size: 24px;
+form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
-.h2 {
-  font-size: 18px;
+form .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 2rem;
 }
 
-.h3 {
-  font-size: 18px;
+form .title h1 {
+  font-size: 28px;
 }
 
-.h4 {
-  font-size: 16px;
-}
-
-.h5 {
-  font-size: 17px;
-}
-
-.h6 {
-  font-size: 12.8px;
+form .title .heart_place {
+  top: 0.25rem;
+  right: 1.5rem;
 }
 
 #locate {
@@ -1120,7 +1153,6 @@ footer li i {
 #restaurants {
   background-color: whitesmoke;
   padding: 3.5rem 0;
-  height: 1000px;
 }
 
 .show_restaurants {
@@ -1135,6 +1167,7 @@ footer li i {
 }
 
 .rest_card {
+  background-color: red;
   background-color: white;
   margin: .5rem 0;
   position: relative;
@@ -1172,5 +1205,125 @@ footer li i {
 .rest_card .heart_place {
   top: 12rem;
   right: 1.5rem;
+}
+
+.welcome_pic {
+  height: 16.125rem;
+  width: 100%;
+}
+
+.welcome_pic img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main {
+  background-color: whitesmoke;
+  border-radius: 2rem 2rem 0 0;
+  padding-top: 2.25rem;
+  margin-top: -2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.main .h2, .main .h6 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main .h4 {
+  text-transform: uppercase;
+}
+
+.main .h4::after {
+  display: block;
+  content: "";
+  margin-top: 5px;
+  height: 3px;
+  width: 2.5rem;
+  background-color: #a0e4d3;
+}
+
+.main .choice .mealcard label {
+  background-color: red;
+  background-color: white;
+  margin: .875rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .choice .mealcard label * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .choice .mealcard label .flxC {
+  border: 1px solid red;
+  padding: .75rem .75rem;
+  width: 100%;
+}
+
+.main .choice .mealcard label .item_arg {
+  display: block;
+}
+
+.main .choice .mealcard label .item_price {
+  font-size: 15px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: .75rem;
+  margin-left: auto;
+}
+
+.main .choice .mealcard label .visual {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.7rem;
+  width: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 0 1rem 1rem 0;
+  background-color: #a0e4d3;
+  -webkit-transition-delay: 40ms;
+          transition-delay: 40ms;
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
+}
+
+.main .choice .mealcard label .visual .visual_check {
+  color: red;
+  color: white;
+  -webkit-transition-delay: 40ms;
+          transition-delay: 40ms;
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
+  font-size: 1.25rem;
+}
+
+.main .choice .mealcard input:checked + label .visual {
+  width: 3.7rem;
+}
+
+.main .choice .mealcard input:checked + label .visual .visual_check {
+  color: blue;
+  color: white;
+  -webkit-transition-delay: 40ms;
+          transition-delay: 40ms;
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
 }
 /*# sourceMappingURL=main.css.map */

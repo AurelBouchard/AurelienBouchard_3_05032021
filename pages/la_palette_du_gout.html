@@ -25,26 +25,44 @@
         </div>
 
         
-        <section class="menu">
-            <h1 class="">La palette du goût</h1>
+        <section class="main">
             <form method="post" action="#" name="menu_form" class="container">
+                <div class="title">
+                    <h1>La palette du goût</h1>
+                    <div class="heart_place">
+                        <input type="checkbox" id="love_1" name="love_1" value="">
+                        <i class="far fa-heart shape"></i>
+                        <label for="love_1"><i class="fas fa-heart filling"></i></label>
+                        <i class="fas fa-wine-bottle bottle"></i>
+                        <i class="fas fa-heart flow"></i>
+                        <i class="fas fa-heart mask"></i>
+                    </div>
+                </div>
+
                 <div class="starters">
-                    <h4>entrées</h4>
-                    <div class="underscore"></div>
+                    <h4 class="h4 entree_plat_dessert">entrées</h4>
 
                     <div class="choice">
-                        <div class="pour accessibilite">
-                            <input type="checkbox" id="starter_1" name="menu_item" value="">
-                            <label for="starter_1">
-                                <span class="item_title">Fricassée d'escargot</span>
-                                <span class="item_arg">Au piment d'Espelette</span>
-                                <span class="item_price">25€</span>
-                                <span class="visual_check"></span>
-                                <span class="visual_back"></span>
+                        <div class="mealcard">
+                            <input type="checkbox" id="starter_1" name="menu_item" value=""
+                            checked=checked>
+                            <label for="starter_1" class="flxR">
+                                <span class="flxC">
+                                    <span class="h2 item_title">Fricassée d'escargot</span>
+                                    <span class="flxR">
+                                   <!-- <span class="h6 item_arg">Au piment d'Espelette</span> -->
+                                        <span class="h6 item_arg">Et ses copeaux de truffe noire</span>
+                                        <span class="h2 item_price">25€</span>
+                                    </span>
+                                </span>
+                                <span class="flxR visual">
+                                    <!-- <span class="visual_back"></span> -->
+                                    <i class="fas fa-check-circle visual_check"></i>
+                                </span>
                             </label>
                         </div>
 
-                        <div class="pour accessibilite">
+                        <div class="mealcard">
                             <input type="checkbox" id="starter_2" name="menu_item" value="">
                             <label for="starter_2">
                                 <span class="item_title">Foie gras de canard mi-cuit</span>
@@ -54,7 +72,7 @@
                             </label>
                         </div>
 
-                        <div class="pour accessibilite">
+                        <div class="mealcard">
                             <input type="checkbox" id="starter_3" name="menu_item" value="">
                             <label for="starter_3">
                                 <span class="item_title">Oeuf au plat</span>
@@ -66,12 +84,14 @@
 
                     </div>                    
                 </div>
+
                 <div class="dishes">
-                    <h4>plats</h4>
+                    <h4 class="h4 entree_plat_dessert">plats</h4>
                     
                 </div>
+
                 <div class="desserts">
-                    <h4>desserts</h4>
+                    <h4 class="h4 entree_plat_dessert">desserts</h4>
                     
                 </div>
 
