@@ -11,7 +11,7 @@
 
 		<script src="https://kit.fontawesome.com/37c61712f6.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="/public/css/main.css" />
+        <link rel="stylesheet" href="public/css/main.css" />
     </head>
 
     <body>
@@ -21,7 +21,7 @@
         </header>
 
         <div class="welcome_pic">
-            <img src="/public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="la_palette_du_gout">
+            <img src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="la_palette_du_gout">
         </div>
 
         
@@ -44,8 +44,7 @@
 
                     <div class="choice">
                         <div class="mealcard">
-                            <input type="checkbox" id="starter_1" name="menu_item" value=""
-                            checked=checked>
+                            <input type="checkbox" id="starter_1" name="menu_item" value="">
                             <label for="starter_1" class="flxR">
                                 <span class="flxC">
                                     <span class="h2 item_title">Fricassée d'escargot</span>
@@ -64,21 +63,36 @@
 
                         <div class="mealcard">
                             <input type="checkbox" id="starter_2" name="menu_item" value="">
-                            <label for="starter_2">
-                                <span class="item_title">Foie gras de canard mi-cuit</span>
-                                <span class="item_arg">Et ses copeaux de truffe noire</span>
-                                <span class="item_price">35€</span>
-                                <span class="visual_check"></span>
+                            <label for="starter_2" class="flxR">
+                                <span class="flxC">
+                                    <span class="h2 item_title">Foie gras de canard mi-cuit</span>
+                                    <span class="flxR">
+                                        <span class="h6 item_arg">Et ses copeaux de truffe noire</span>
+                                        <span class="h2 item_price">35€</span>
+                                    </span>
+                                </span>
+                                <span class="flxR visual">
+                                    <!-- <span class="visual_back"></span> -->
+                                    <i class="fas fa-check-circle visual_check"></i>
+                                </span>
                             </label>
                         </div>
 
                         <div class="mealcard">
                             <input type="checkbox" id="starter_3" name="menu_item" value="">
-                            <label for="starter_3">
-                                <span class="item_title">Oeuf au plat</span>
-                                <span class="item_arg">Assaisonné à la truffe sur lit de caviar</span>
-                                <span class="item_price">20€</span>
-                                <span class="visual_check"></span>
+                            <label for="starter_3" class="flxR">
+                                <span class="flxC">
+                                    <span class="h2 item_title">Oeuf au plat</span>
+                                    <span class="flxR">
+                                   <!-- <span class="h6 item_arg">Au piment d'Espelette</span> -->
+                                        <span class="h6 item_arg">Assaisonné à la truffe sur lit de caviar</span>
+                                        <span class="h2 item_price">20€</span>
+                                    </span>
+                                </span>
+                                <span class="flxR visual">
+                                    <!-- <span class="visual_back"></span> -->
+                                    <i class="fas fa-check-circle visual_check"></i>
+                                </span>
                             </label>
                         </div>
 
