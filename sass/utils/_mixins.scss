@@ -1,0 +1,26 @@
+@mixin underscore($color:$color-ter, $thickness:3px, $length:2.5rem) {
+    display:block;
+    content: "";
+    margin-top: 5px;
+    height: $thickness;
+    width:  $length;
+    background-color: $color;
+}
+
+
+
+@mixin card($type){
+    @extend %card_style;
+    background-color: red;
+
+    @if $type == restcard {
+        background-color: white;
+        margin:.5rem 0;
+    }
+
+    @if $type == mealcard {
+        background-color: white;
+        margin:.875rem 0;
+    }
+
+}
