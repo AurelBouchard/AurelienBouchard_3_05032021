@@ -375,6 +375,164 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
   }
 }
 
+form .title .heart_place, .rest_card .heart_place {
+  position: absolute;
+  width: 24.2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form .title .heart_place .shape, .rest_card .heart_place .shape {
+  line-height: 22px;
+  font-size: 22px;
+}
+
+form .title .heart_place label, .rest_card .heart_place label {
+  height: 22px;
+  font-size: 20px;
+  position: relative;
+  left: -21px;
+  top: 0.5px;
+}
+
+form .title .heart_place .filling, .rest_card .heart_place .filling {
+  color: white;
+}
+
+form .title .heart_place .bottle, .rest_card .heart_place .bottle {
+  color: #9256dc;
+  font-size: 44px;
+  position: relative;
+  left: -81.4px;
+  top: -19.8px;
+  -webkit-transform-origin: 95% 20%;
+          transform-origin: 95% 20%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+
+form .title .heart_place .flow, .rest_card .heart_place .flow {
+  color: #9256dc;
+  font-size: 22px;
+  height: 22px;
+  position: relative;
+  left: -86.46px;
+  top: -22px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+form .title .heart_place .mask, .rest_card .heart_place .mask {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
+  background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
+  font-size: 22px;
+  height: 22px;
+  position: relative;
+  left: -108.9px;
+  top: 0.44px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+form .title .heart_place input:checked + .shape, .rest_card .heart_place input:checked + .shape {
+  opacity: 0;
+}
+
+form .title .heart_place input:checked + .shape + label, .rest_card .heart_place input:checked + .shape + label {
+  z-index: 50;
+  -webkit-transition: z-index 0ms 2s;
+  transition: z-index 0ms 2s;
+}
+
+form .title .heart_place input:checked + .shape + label .filling, .rest_card .heart_place input:checked + .shape + label .filling {
+  opacity: 0;
+}
+
+form .title .heart_place input:checked + .shape + label + .bottle, .rest_card .heart_place input:checked + .shape + label + .bottle {
+  -webkit-animation-name: bottle;
+          animation-name: bottle;
+  -webkit-animation-delay: 80ms;
+          animation-delay: 80ms;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+}
+
+form .title .heart_place input:checked + .shape + label + .bottle + .flow, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow {
+  -webkit-animation-name: flow;
+          animation-name: flow;
+  -webkit-animation-delay: 160ms;
+          animation-delay: 160ms;
+  -webkit-animation-duration: 1800ms;
+          animation-duration: 1800ms;
+}
+
+form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mask, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow + .mask {
+  -webkit-transform: scale(1, 0.95);
+          transform: scale(1, 0.95);
+  opacity: 1;
+  -webkit-transition: opacity 100ms 2000ms;
+  transition: opacity 100ms 2000ms;
+}
+
+@keyframes bottle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  20% {
+    opacity: 1;
+  }
+  55%, 70% {
+    -webkit-transform: rotate(57deg);
+            transform: rotate(57deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  99% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes flow {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(1) translate(0, 8.8px);
+            transform: scale(1) translate(0, 8.8px);
+  }
+  90% {
+    -webkit-transform: scale(1) translate(0, 19.8px);
+            transform: scale(1) translate(0, 19.8px);
+  }
+  95% {
+    -webkit-transform: scale(1.2) translate(0, 20.9px);
+            transform: scale(1.2) translate(0, 20.9px);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: translate(0, 22px);
+            transform: translate(0, 22px);
+    opacity: 1;
+  }
+}
+
 .loader__logo {
   position: fixed;
   top: 10%;
