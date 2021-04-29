@@ -23,4 +23,11 @@
         margin:.875rem 0;
     }
 
+    @if $type == rule {
+        background-color: hsl(0, 0%, 96%);
+        padding-top: 1.8rem;
+        padding-bottom: 1.25rem;
+        margin: 1.5rem 0;
+    }
+
 }

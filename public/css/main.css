@@ -8,12 +8,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-.rest_card, .main .choice .mealcard label, .btn {
+#rules_list .rule, .rest_card, .main .choice .mealcard label, .btn {
   -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
           box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
 }
 
-.rest_card, .main .choice .mealcard label {
+#rules_list .rule, .rest_card, .main .choice .mealcard label {
   border-radius: 1rem;
 }
 
@@ -79,6 +79,10 @@ body {
   font-family: "Roboto-light";
 }
 
+.h7 {
+  font-family: "Roboto-medium";
+}
+
 .entree_plat_dessert {
   font-family: "Roboto-light";
 }
@@ -138,6 +142,7 @@ input[type="checkbox"] {
   color: white;
   font-size: 16px;
   border-radius: 2rem;
+  border: none;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#ff7ad9), color-stop(#9256dc), to(#ff7ad9));
   background-image: linear-gradient(to left top, #ff7ad9, #9256dc, #ff7ad9);
   background-size: 1000%, 100%;
@@ -588,13 +593,13 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P1.jpg");
+    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P2.jpg");
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L1.jpg");
+    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L2.jpg");
   }
 }
 
@@ -1272,6 +1277,14 @@ form .title .heart_place {
   right: 1.5rem;
 }
 
+form .btn {
+  width: 11.75rem;
+  margin-top: 2.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+
 #locate {
   text-align: center;
 }
@@ -1306,6 +1319,58 @@ form .title .heart_place {
 
 #rules_list {
   background-color: white;
+  padding-top: 3rem;
+}
+
+#rules_list .rule {
+  background-color: red;
+  background-color: whitesmoke;
+  padding-top: 1.8rem;
+  padding-bottom: 1.25rem;
+  margin: 1.5rem 0;
+  margin-left: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+}
+
+#rules_list .rule .chip {
+  background-color: #9256dc;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 1rem;
+  text-align: center;
+  line-height: 25px;
+  font-family: "Roboto-medium";
+  font-size: .855rem;
+  margin-left: -12px;
+}
+
+#rules_list .rule i {
+  margin: 0 1.5rem;
+  color: #777;
+  font-size: 20px;
+  width: 1rem;
+}
+
+#rules_list .rule:nth-child(2) i {
+  -webkit-transform: scale(0.8, 1);
+          transform: scale(0.8, 1);
+}
+
+#rules_list .rule:nth-child(3) {
+  background-color: #f4ebff;
+}
+
+#rules_list .rule:nth-child(3) i {
+  color: #9256dc;
+  font-size: 18px;
+  -webkit-transform: scale(0.8, 1);
+          transform: scale(0.8, 1);
 }
 
 #restaurants {

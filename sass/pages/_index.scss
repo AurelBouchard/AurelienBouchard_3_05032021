@@ -31,6 +31,50 @@
 
 #rules_list {
     background-color: white;
+    padding-top: 3rem;
+
+    & .rule{
+        @include card(rule);
+        margin-left: 0.75rem;
+
+        display: flex;
+        justify-content: baseline;
+
+        & .chip{
+            background-color: $color-prim;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 1rem;
+            text-align: center;
+            line-height: 25px;
+            font-family: "Roboto-medium";
+            font-size: .855rem;
+            margin-left: -12px;
+        }
+        
+        & i{
+            margin: 0 1.5rem;
+            color: #777;
+            font-size: 20px;
+            width: 1rem;
+        }
+        
+        
+        &:nth-child(2) i {
+            transform : scale(0.8, 1);
+        }
+        
+        
+        &:nth-child(3) {
+            background-color: $color-prim-light;
+            & i{
+                color: $color-prim;
+                font-size: 18px;
+                transform : scale(0.8, 1);
+            }
+        }
+    }
 }
 
 

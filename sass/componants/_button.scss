@@ -5,6 +5,7 @@
     color:$btn-text-color;
     font-size: $FS_btn;
     border-radius:2rem;
+    border: none;
 
     background-image: linear-gradient(to left top, $color-sec, $color-prim, $color-sec);
     background-size: 1000%, 100%;
