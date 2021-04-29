@@ -4,14 +4,16 @@
     width:$heart_size*1.1;
 
     display: flex;
+
     & .shape{ //pourtour noir
         line-height:  $heart_size;
         font-size: $heart_size;
     }
 
     & label {
-        line-height:  $heart_size;
+        height: $heart_size;
         font-size: $heart_size+(-(2*$shape_thickness));
+
         position: relative;
         left:-($heart_size)+$shape_thickness;
         top:$shape_thickness/2;
