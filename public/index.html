@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>ohmyfood</title>
+        
+        <meta name="description" content="">
+		<meta name="keywords" content="">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://kit.fontawesome.com/37c61712f6.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="public/css/main.css" />
+    </head>
+
+    <body class="background">
+        <header>
+            <!-- <a href="/index.html" class="back_to_index"><i class="fas fa-arrow-left"></i></a> -->
+            <span class="logo">ohmyfood</span>
+        </header>
+
+        <div id="locate">
+            <i class="fas fa-map-marker-alt not_on_index"></i>
+            <span class="place">Paris, Belleville</span>
+        </div>
+
+        <div id="introduction">
+            <p class="h1">Réservez le menu qui vous convient</p>
+            <p class="h3">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+
+            <a href="index.html#restaurants" class="btn">Explorer nos restaurants</a>
+        </div>
+
+
+        <div id="rules_list">
+            <div class="container">
+                <div class="h1">Fonctionnement</div>
+                
+                <ul class="rolling_rules">
+                    <li class="rule">
+                        <span class="chip">1</span>
+                        <i class="fas fa-mobile-alt"></i>
+                        <span class="h7">Choisissez un restaurant</span>
+                    </li>
+                    <li class="rule">
+                        <span class="chip">2</span>
+                        <i class="fas fa-list-ul"></i>
+                        <span class="h7">Composez votre menu</span>
+                    </li>
+                    <li class="rule">
+                        <span class="chip">3</span>
+                        <i class="fas fa-store"></i>
+                        <span class="h7">Dégustez au restaurant</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <section id="restaurants">
+            <div class="container">
+                <div class="h1">Restaurants</div>
+
+                <div class="show_restaurants">
+                    <div class="rest_card">
+                        <a href="../pages/la_palette_du_gout.html">
+                            <span class="flag_new">Nouveau</span>
+                            <img src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                            alt="la_palette_du_gout">
+                            <div class="bottom_stripe">
+                                <h2 class="h2">La palette du goût</h2>
+                                <h3 class="h5">Ménilmontant</h3>
+                            </div>
+                        </a>
+                        <div class="heart_place">
+                            <input type="checkbox" id="love_1" name="love_1" value="">
+                            <!-- <i class="far fa-heart shape"></i> -->
+                            <img src="../images/svg/heart-intermediate.svg" alt="heart_symbol" class="shape"/>
+                            <label for="love_1">
+                                <!-- <i class="fas fa-heart filling"></i> -->
+                            </label>
+                            <i class="fas fa-wine-bottle bottle"></i>
+                            <i class="fas fa-heart flow"></i>
+                            <i class="fas fa-heart mask"></i>
+                        </div>
+                    </div>
+
+                    <div class="rest_card">
+                        <a href="../pages/la_note_enchantée.html">
+                            <span class="flag_new">Nouveau</span>
+                            <img src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+                            alt="la_note_enchantée">
+                            <div class="bottom_stripe">
+                                <h2 class="h2">La note enchantée</h2>
+                                <h3 class="h5">Charonne</h3>
+                            </div>
+                        </a>
+                        <div class="heart_place">
+                            <input type="checkbox" id="love_2" name="love_2" value="">
+                            <i class="far fa-heart shape"></i>
+                            <label for="love_2"><i class="fas fa-heart filling"></i></label>
+                            <i class="fas fa-wine-bottle bottle"></i>
+                            <i class="fas fa-heart flow"></i>
+                            <i class="fas fa-heart mask"></i>
+                        </div>
+                    </div>
+
+                    <div class="rest_card">
+                        <a href="../pages/a_la_française.html">
+                            <span class="flag_new">Nouveau</span>
+                            <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                            alt="à_la_française">
+                            <div class="bottom_stripe">
+                                <h2 class="h2">À la française</h2>
+                                <h3 class="h5">Cité Rouge</h3>
+                            </div>
+                        </a>
+                        <div class="heart_place">
+                            <input type="checkbox" id="love_3" name="love_3" value="">
+                            <i class="far fa-heart shape"></i>
+                            <label for="love_3"><i class="fas fa-heart filling"></i></label>
+                            <i class="fas fa-wine-bottle bottle"></i>
+                            <i class="fas fa-heart flow"></i>
+                            <i class="fas fa-heart mask"></i>
+                        </div>
+                    </div>
+
+                    <div class="rest_card">
+                        <a href="../pages/le_delice_des_sens.html">
+                            <span class="flag_new">Nouveau</span>
+                            <img src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                            alt="le_délice_des_sens">
+                            <div class="bottom_stripe">
+                                <h2 class="h2">Le délice des sens</h2>
+                                <h3 class="h5">Folie-Méricourt</h3>
+                            </div>
+                        </a>
+                        <div class="heart_place">
+                            <input type="checkbox" id="love_4" name="love_4" value="">
+                            <i class="far fa-heart shape"></i>
+                            <label for="love_4"><i class="fas fa-heart filling"></i></label>
+                            <i class="fas fa-wine-bottle bottle"></i>
+                            <i class="fas fa-heart flow"></i>
+                            <i class="fas fa-heart mask"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p class="title">ohmyfood</p>
+                <ul>
+                    <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+                    <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+                    <li>Mentions légales</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </footer>
+
+
+        <div class="loader__logo">ohmyfood</div>
+        <div class="loader">
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+            <div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div><div class="flap"></div>
+        </div>
+    </body>
+
+</html>

@@ -80,7 +80,7 @@ $delay-V:   $delay-H*$coef*$coef*$coef*$coef+$delay-H*$coef*$coef*$coef+$delay-H
             0ms ; // MUST BE 4 values in ms and 1 more at 0ms.
 $flip-duration: 400ms;
 
-$back-portrait :"https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P1.jpg",
-                "https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P2.jpg";
-$back-landscape :   "https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L1.jpg",
-                    "https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L2.jpg";
+$back-portrait :"../images/loader/P1.jpg",
+                "../images/loader/P2.jpg";
+$back-landscape :   "../images/loader/L1.jpg",
+                    "../images/loader/L2.jpg";
