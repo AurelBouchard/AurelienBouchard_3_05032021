@@ -15,7 +15,7 @@
 
     @extend %shadow;
 
-    &:active{
+    &:hover{
         background-position: 100% 0 ;
         transition-delay: 20ms;
         transition-duration: 140ms;
