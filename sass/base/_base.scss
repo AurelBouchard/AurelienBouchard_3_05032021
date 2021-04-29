@@ -7,42 +7,23 @@
 }
 
 body{
-    background-color: $color-mediumgrey;
     @extend %clean_text;
 }
 
 @each $h_level in $h_levels {
-  #{$h_level} {
-      @extend %reset_h_style;
+    #{$h_level} {
+        @extend %reset_h_style;
   }
 }
 
-
-
-
-
-
-// ##### BLOCKS #########################################
-// a mettre dans layout
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-
-
-// ##### PARTICULAR ELEMENTS #########################################
-
-.welcome_pic {
-    height: 200px;
-    width: 100%;
-    & img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+@each $h_TAG_level in $h_levels {
+    .#{$h_TAG_level} {
+        font-size: map-get($FS_map, $h_TAG_level)
     }
 }
+
+
+
 
 
 // ##### SMALL ELEMENTS #########################################

@@ -1,0 +1,113 @@
+.welcome_pic {
+    height: $welcome_pic_height;
+    width: 100%;
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.main {
+    background-color: $bg-main;
+    border-radius: 2rem 2rem 0 0;
+    padding-top: 2.25rem;
+    margin-top: -2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+   
+    & .h2, .h6{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        //flex-wrap: wrap;
+    }
+
+    & .h4{
+        text-transform: uppercase;
+        &::after {
+            @include underscore;
+        }
+    }
+
+    & .choice {
+
+        & .mealcard{
+
+            & label{
+                @include card(mealcard);
+                display: flex;
+                //justify-content: space-between;
+
+                & *{
+                    display: flex;
+                }
+
+                & .flxC{
+                    border: 1px solid red;
+                    padding: .75rem .75rem;
+                    width:100%;
+                }
+
+                & .item_arg{
+                    display: block;
+                }
+
+                & .item_price{
+                    font-size: map-get($FS_map, h6 );
+                    align-self: flex-end;
+                    //margin: 0 1rem;
+                    margin-right: .75rem;
+                    margin-left: auto;
+                }
+
+                & .visual{
+                    justify-content: center;
+                    align-items: center;
+                    width: 3.7rem;
+                    width: 0;
+                    flex-shrink: 0;
+
+                    border-radius: 0 $card_radius $card_radius 0;
+
+                    //background-image: linear-gradient(90deg, pink 50%, $color-ter 50%);
+                    //background-size: 200% 100%;
+                    //background-position: left top;
+
+                    background-color: $color-ter;
+
+                    transition-delay: 40ms;
+                    transition-duration: 800ms;
+                   
+
+                    & .visual_check{
+                        color: red;
+                        color: white;
+                        transition-delay: 40ms;
+                        transition-duration: 800ms;
+                        font-size: $check_size;
+                    }
+                }
+
+            }
+
+            & input:checked + label .visual{
+                //transition-delay: 40ms;
+                //transition-duration: 800ms;
+                    width: 3.7rem;
+
+                & .visual_check{
+                    color: blue;
+                    color: white;
+                    transition-delay: 40ms;
+                    transition-duration: 800ms;
+
+                }
+            }
+            
+        }
+    }
+
+}

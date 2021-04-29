@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-color: $bg-body;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+* .flxR{
+    flex-flow:row nowrap;
+}
+
+* .flxC{
+    flex-flow:column nowrap;
+}
