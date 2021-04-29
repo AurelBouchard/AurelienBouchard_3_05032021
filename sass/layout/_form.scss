@@ -1,0 +1,23 @@
+form {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+
+    & .title {
+        display: flex;
+        
+        & h1{
+        font-size: map-get($FS_map, h1 )*(28/24);
+        }
+    
+        & .heart_place{
+            top:    0.25rem;
+            right:  1.5rem;
+            @extend %heart;
+        }
+
+        padding-bottom: 2rem;
+    }
+
+    // SEE PAGES/RESTAURANTS 
+}
