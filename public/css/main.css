@@ -172,6 +172,9 @@ input[type="checkbox"] {
 
 form .title .heart_place, .rest_card .heart_place {
   width: 24.2px;
+  opacity: 0;
+  -webkit-animation: lag 1ms 260ms forwards;
+          animation: lag 1ms 260ms forwards;
 }
 
 form .title .heart_place label, .rest_card .heart_place label {
@@ -410,6 +413,18 @@ form .title .heart_place input:checked + label .mask, .rest_card .heart_place in
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes lag {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lag {
+  100% {
     opacity: 1;
   }
 }

@@ -2,6 +2,9 @@
 
     width:$heart_size*1.1;
 
+    opacity: 0;
+    animation: lag 1ms 260ms forwards;
+
 
     & label {
         height: $heart_size;
@@ -146,6 +149,12 @@
     }
     100% {
         transform: scale(0);
+        opacity: 1;
+    }
+}
+
+@keyframes lag{
+    100%{
         opacity: 1;
     }
 }
