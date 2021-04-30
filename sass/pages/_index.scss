@@ -92,9 +92,10 @@
 
 .rest_card {
     @include card(restcard);
-    //border-radius: 1rem;
+    
     position: relative;
-        & img{
+
+        & a img{
             height: 10.875rem;
             width:100%;
             object-fit: cover;
@@ -113,6 +114,7 @@
             padding: .75rem .8125rem;
         }
         & .heart_place{
+            position: absolute;
             top: 12rem;
             right:1.5rem;
             @extend %heart;

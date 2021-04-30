@@ -150,7 +150,7 @@ input[type="checkbox"] {
   padding: 1rem 0;
 }
 
-.btn:active {
+.btn:hover {
   background-position: 100% 0;
   -webkit-transition-delay: 20ms;
           transition-delay: 20ms;
@@ -171,56 +171,45 @@ input[type="checkbox"] {
 }
 
 form .title .heart_place, .rest_card .heart_place {
-  position: absolute;
   width: 24.2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-form .title .heart_place .shape, .rest_card .heart_place .shape {
-  line-height: 22px;
-  font-size: 22px;
 }
 
 form .title .heart_place label, .rest_card .heart_place label {
   height: 22px;
-  font-size: 20px;
+  width: 22px;
+}
+
+form .title .heart_place label .shape, .rest_card .heart_place label .shape {
+  height: 22px;
+  width: 22px;
+}
+
+form .title .heart_place label .bottle, .rest_card .heart_place label .bottle {
   position: relative;
-  left: -21px;
-  top: 0.5px;
-}
-
-form .title .heart_place .filling, .rest_card .heart_place .filling {
-  color: white;
-}
-
-form .title .heart_place .bottle, .rest_card .heart_place .bottle {
   color: #9256dc;
   font-size: 44px;
-  position: relative;
-  left: -81.4px;
-  top: -19.8px;
+  left: -39.6px;
+  top: -48.4px;
+  opacity: 0;
   -webkit-transform-origin: 95% 20%;
           transform-origin: 95% 20%;
   -webkit-transform: scale(0);
           transform: scale(0);
-  opacity: 0;
 }
 
-form .title .heart_place .flow, .rest_card .heart_place .flow {
+form .title .heart_place label .flow, .rest_card .heart_place label .flow {
+  position: relative;
   color: #9256dc;
   font-size: 22px;
   height: 22px;
-  position: relative;
-  left: -86.46px;
-  top: -22px;
+  top: -88px;
   opacity: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
-form .title .heart_place .mask, .rest_card .heart_place .mask {
+form .title .heart_place label .mask, .rest_card .heart_place label .mask {
+  position: relative;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -228,29 +217,25 @@ form .title .heart_place .mask, .rest_card .heart_place .mask {
   background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
   font-size: 22px;
   height: 22px;
-  position: relative;
-  left: -108.9px;
-  top: 0.44px;
+  top: -92.4px;
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  -webkit-animation: _unmask 400ms backwards;
+          animation: _unmask 400ms backwards;
 }
 
-form .title .heart_place input:checked + .shape, .rest_card .heart_place input:checked + .shape {
-  opacity: 0;
-}
-
-form .title .heart_place input:checked + .shape + label, .rest_card .heart_place input:checked + .shape + label {
+form .title .heart_place input:checked + label, .rest_card .heart_place input:checked + label {
   z-index: 50;
   -webkit-transition: z-index 0ms 2s;
   transition: z-index 0ms 2s;
 }
 
-form .title .heart_place input:checked + .shape + label .filling, .rest_card .heart_place input:checked + .shape + label .filling {
+form .title .heart_place input:checked + label .shape, .rest_card .heart_place input:checked + label .shape {
   opacity: 0;
+  -webkit-transition: opacity 300ms 1100ms;
+  transition: opacity 300ms 1100ms;
 }
 
-form .title .heart_place input:checked + .shape + label + .bottle, .rest_card .heart_place input:checked + .shape + label + .bottle {
+form .title .heart_place input:checked + label .bottle, .rest_card .heart_place input:checked + label .bottle {
   -webkit-animation-name: bottle;
           animation-name: bottle;
   -webkit-animation-delay: 80ms;
@@ -259,7 +244,7 @@ form .title .heart_place input:checked + .shape + label + .bottle, .rest_card .h
           animation-duration: 2000ms;
 }
 
-form .title .heart_place input:checked + .shape + label + .bottle + .flow, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow {
+form .title .heart_place input:checked + label .flow, .rest_card .heart_place input:checked + label .flow {
   -webkit-animation-name: flow;
           animation-name: flow;
   -webkit-animation-delay: 160ms;
@@ -268,12 +253,9 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow, .rest
           animation-duration: 1800ms;
 }
 
-form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mask, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow + .mask {
-  -webkit-transform: scale(1, 0.95);
-          transform: scale(1, 0.95);
-  opacity: 1;
-  -webkit-transition: opacity 100ms 2000ms;
-  transition: opacity 100ms 2000ms;
+form .title .heart_place input:checked + label .mask, .rest_card .heart_place input:checked + label .mask {
+  -webkit-animation: _mask 200ms 1950ms forwards;
+          animation: _mask 200ms 1950ms forwards;
 }
 
 @-webkit-keyframes bottle {
@@ -341,14 +323,14 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
             transform: scale(1) translate(0, 19.8px);
   }
   95% {
-    -webkit-transform: scale(1.2) translate(0, 20.9px);
-            transform: scale(1.2) translate(0, 20.9px);
+    -webkit-transform: scale(1.12) translate(0, 20.9px);
+            transform: scale(1.12) translate(0, 20.9px);
   }
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform: translate(0, 22px);
-            transform: translate(0, 22px);
+    -webkit-transform: translate(0, 20.9px);
+            transform: translate(0, 20.9px);
     opacity: 1;
   }
 }
@@ -368,179 +350,73 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
             transform: scale(1) translate(0, 19.8px);
   }
   95% {
-    -webkit-transform: scale(1.2) translate(0, 20.9px);
-            transform: scale(1.2) translate(0, 20.9px);
+    -webkit-transform: scale(1.12) translate(0, 20.9px);
+            transform: scale(1.12) translate(0, 20.9px);
   }
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform: translate(0, 22px);
-            transform: translate(0, 22px);
+    -webkit-transform: translate(0, 20.9px);
+            transform: translate(0, 20.9px);
     opacity: 1;
   }
 }
 
-form .title .heart_place, .rest_card .heart_place {
-  position: absolute;
-  width: 24.2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-form .title .heart_place .shape, .rest_card .heart_place .shape {
-  line-height: 22px;
-  font-size: 22px;
-}
-
-form .title .heart_place label, .rest_card .heart_place label {
-  height: 22px;
-  font-size: 20px;
-  position: relative;
-  left: -21px;
-  top: 0.5px;
-}
-
-form .title .heart_place .filling, .rest_card .heart_place .filling {
-  color: white;
-}
-
-form .title .heart_place .bottle, .rest_card .heart_place .bottle {
-  color: #9256dc;
-  font-size: 44px;
-  position: relative;
-  left: -81.4px;
-  top: -19.8px;
-  -webkit-transform-origin: 95% 20%;
-          transform-origin: 95% 20%;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  opacity: 0;
-}
-
-form .title .heart_place .flow, .rest_card .heart_place .flow {
-  color: #9256dc;
-  font-size: 22px;
-  height: 22px;
-  position: relative;
-  left: -86.46px;
-  top: -22px;
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
-form .title .heart_place .mask, .rest_card .heart_place .mask {
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
-  background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
-  font-size: 22px;
-  height: 22px;
-  position: relative;
-  left: -108.9px;
-  top: 0.44px;
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
-form .title .heart_place input:checked + .shape, .rest_card .heart_place input:checked + .shape {
-  opacity: 0;
-}
-
-form .title .heart_place input:checked + .shape + label, .rest_card .heart_place input:checked + .shape + label {
-  z-index: 50;
-  -webkit-transition: z-index 0ms 2s;
-  transition: z-index 0ms 2s;
-}
-
-form .title .heart_place input:checked + .shape + label .filling, .rest_card .heart_place input:checked + .shape + label .filling {
-  opacity: 0;
-}
-
-form .title .heart_place input:checked + .shape + label + .bottle, .rest_card .heart_place input:checked + .shape + label + .bottle {
-  -webkit-animation-name: bottle;
-          animation-name: bottle;
-  -webkit-animation-delay: 80ms;
-          animation-delay: 80ms;
-  -webkit-animation-duration: 2000ms;
-          animation-duration: 2000ms;
-}
-
-form .title .heart_place input:checked + .shape + label + .bottle + .flow, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow {
-  -webkit-animation-name: flow;
-          animation-name: flow;
-  -webkit-animation-delay: 160ms;
-          animation-delay: 160ms;
-  -webkit-animation-duration: 1800ms;
-          animation-duration: 1800ms;
-}
-
-form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mask, .rest_card .heart_place input:checked + .shape + label + .bottle + .flow + .mask {
-  -webkit-transform: scale(1, 0.95);
-          transform: scale(1, 0.95);
-  opacity: 1;
-  -webkit-transition: opacity 100ms 2000ms;
-  transition: opacity 100ms 2000ms;
-}
-
-@keyframes bottle {
+@-webkit-keyframes _mask {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 0;
   }
-  20% {
-    opacity: 1;
-  }
-  55%, 70% {
-    -webkit-transform: rotate(57deg);
-            transform: rotate(57deg);
-  }
-  90% {
-    opacity: 1;
-  }
-  99% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes _mask {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes _unmask {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
   }
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
+    opacity: 1;
   }
 }
 
-@keyframes flow {
+@keyframes _unmask {
   0% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  40% {
-    opacity: 1;
-    -webkit-transform: scale(1) translate(0, 8.8px);
-            transform: scale(1) translate(0, 8.8px);
-  }
-  90% {
-    -webkit-transform: scale(1) translate(0, 19.8px);
-            transform: scale(1) translate(0, 19.8px);
-  }
-  95% {
-    -webkit-transform: scale(1.2) translate(0, 20.9px);
-            transform: scale(1.2) translate(0, 20.9px);
-  }
-  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform: translate(0, 22px);
-            transform: translate(0, 22px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
     opacity: 1;
   }
 }
 
 .loader__logo {
   position: fixed;
-  top: 10%;
+  top: 60px;
   z-index: 99;
   opacity: 0;
   background: none;
@@ -548,8 +424,8 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
   font-family: "Shrikhand";
   font-size: 50px;
   color: white;
-  -webkit-animation: ohmy 1400ms 1600ms, loading_done 1ms 3000ms;
-          animation: ohmy 1400ms 1600ms, loading_done 1ms 3000ms;
+  -webkit-animation: ohmy 1ms 1ms, loading_done 1ms 1ms;
+          animation: ohmy 1ms 1ms, loading_done 1ms 1ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -583,8 +459,8 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
   background-repeat: no-repeat;
   -webkit-animation-name: loading_done;
           animation-name: loading_done;
-  -webkit-animation-delay: 2800ms;
-          animation-delay: 2800ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-duration: 150ms;
           animation-duration: 150ms;
   -webkit-animation-fill-mode: forwards;
@@ -593,13 +469,13 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/P2.jpg");
+    background-image: url("../images/loader/P2.jpg");
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/images/loader/L2.jpg");
+    background-image: url("../images/loader/L2.jpg");
   }
 }
 
@@ -613,10 +489,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(25) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 220ms;
-          animation-delay: 220ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -624,10 +500,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(24) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 440ms;
-          animation-delay: 440ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -635,10 +511,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(23) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 660ms;
-          animation-delay: 660ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -646,10 +522,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(22) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 880ms;
-          animation-delay: 880ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -657,10 +533,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(21) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1100ms;
-          animation-delay: 1100ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -668,10 +544,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(20) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 374ms;
-          animation-delay: 374ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -679,10 +555,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(19) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 594ms;
-          animation-delay: 594ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -690,10 +566,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(18) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 814ms;
-          animation-delay: 814ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -701,10 +577,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(17) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1034ms;
-          animation-delay: 1034ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -712,10 +588,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(16) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1254ms;
-          animation-delay: 1254ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -723,10 +599,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(15) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 481.8ms;
-          animation-delay: 481.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -734,10 +610,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(14) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 701.8ms;
-          animation-delay: 701.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -745,10 +621,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(13) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 921.8ms;
-          animation-delay: 921.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -756,10 +632,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(12) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1141.8ms;
-          animation-delay: 1141.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -767,10 +643,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(11) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1361.8ms;
-          animation-delay: 1361.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -778,10 +654,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(10) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 557.26ms;
-          animation-delay: 557.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -789,10 +665,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(9) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 777.26ms;
-          animation-delay: 777.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -800,10 +676,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(8) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 997.26ms;
-          animation-delay: 997.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -811,10 +687,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(7) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1217.26ms;
-          animation-delay: 1217.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -822,10 +698,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(6) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1437.26ms;
-          animation-delay: 1437.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -833,10 +709,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(5) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 610.082ms;
-          animation-delay: 610.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -844,10 +720,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(4) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 830.082ms;
-          animation-delay: 830.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -855,10 +731,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(3) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1050.082ms;
-          animation-delay: 1050.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -866,10 +742,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(2) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1270.082ms;
-          animation-delay: 1270.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -877,10 +753,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(1) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1490.082ms;
-          animation-delay: 1490.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -888,10 +764,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(30) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 374ms;
-          animation-delay: 374ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -899,10 +775,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(29) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 594ms;
-          animation-delay: 594ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -910,10 +786,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(28) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 814ms;
-          animation-delay: 814ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -921,10 +797,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(27) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1034ms;
-          animation-delay: 1034ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -932,10 +808,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(26) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1254ms;
-          animation-delay: 1254ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -943,10 +819,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(35) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 481.8ms;
-          animation-delay: 481.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -954,10 +830,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(34) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 701.8ms;
-          animation-delay: 701.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -965,10 +841,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(33) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 921.8ms;
-          animation-delay: 921.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -976,10 +852,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(32) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1141.8ms;
-          animation-delay: 1141.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -987,10 +863,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(31) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1361.8ms;
-          animation-delay: 1361.8ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -998,10 +874,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(40) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 557.26ms;
-          animation-delay: 557.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1009,10 +885,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(39) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 777.26ms;
-          animation-delay: 777.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1020,10 +896,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(38) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 997.26ms;
-          animation-delay: 997.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1031,10 +907,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(37) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1217.26ms;
-          animation-delay: 1217.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1042,10 +918,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(36) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1437.26ms;
-          animation-delay: 1437.26ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1053,10 +929,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(45) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 610.082ms;
-          animation-delay: 610.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1064,10 +940,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(44) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 830.082ms;
-          animation-delay: 830.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1075,10 +951,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(43) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1050.082ms;
-          animation-delay: 1050.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1086,10 +962,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(42) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1270.082ms;
-          animation-delay: 1270.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1097,10 +973,10 @@ form .title .heart_place input:checked + .shape + label + .bottle + .flow + .mas
 .loader .flap:nth-child(41) {
   -webkit-animation-name: _flip;
           animation-name: _flip;
-  -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
-  -webkit-animation-delay: 1490.082ms;
-          animation-delay: 1490.082ms;
+  -webkit-animation-duration: 0ms;
+          animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -1262,9 +1138,10 @@ form {
 }
 
 form .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  position: relative;
   padding-bottom: 2rem;
 }
 
@@ -1273,8 +1150,9 @@ form .title h1 {
 }
 
 form .title .heart_place {
-  top: 0.25rem;
-  right: 1.5rem;
+  position: absolute;
+  top: .25rem;
+  right: .5rem;
 }
 
 form .btn {
@@ -1396,7 +1274,7 @@ form .btn {
   position: relative;
 }
 
-.rest_card img {
+.rest_card a img {
   height: 10.875rem;
   width: 100%;
   -o-object-fit: cover;
@@ -1426,6 +1304,7 @@ form .btn {
 }
 
 .rest_card .heart_place {
+  position: absolute;
   top: 12rem;
   right: 1.5rem;
 }
@@ -1495,6 +1374,12 @@ form .btn {
   width: 100%;
 }
 
+.main .choice .mealcard label .flxC .flxR {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .main .choice .mealcard label .item_arg {
   display: block;
 }
@@ -1504,7 +1389,6 @@ form .btn {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-right: .75rem;
-  margin-left: auto;
 }
 
 .main .choice .mealcard label .visual {

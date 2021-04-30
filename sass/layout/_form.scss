@@ -4,15 +4,17 @@ form {
     flex-flow: column nowrap;
 
     & .title {
-        display: flex;
+        flex: none;
+        position: relative;
         
         & h1{
-        font-size: map-get($FS_map, h1 )*(28/24);
+            font-size: map-get($FS_map, h1 )*(28/24);
         }
     
         & .heart_place{
-            top:    0.25rem;
-            right:  1.5rem;
+            position: absolute;
+            top:    .25rem;
+            right:  .5rem;
             @extend %heart;
         }
 
