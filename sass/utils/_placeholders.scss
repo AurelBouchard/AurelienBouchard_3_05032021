@@ -22,3 +22,10 @@
     border-radius: $card_radius;
     @extend %shadow;
 }
+
+
+%text_ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

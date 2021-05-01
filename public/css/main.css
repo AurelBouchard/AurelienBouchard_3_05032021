@@ -8,13 +8,19 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-#rules_list .rule, .rest_card, .main .choice .mealcard label, .btn {
+#rules_list .rule, .rest_card, .choice .mealcard, .btn {
   -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
           box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
 }
 
-#rules_list .rule, .rest_card, .main .choice .mealcard label {
+#rules_list .rule, .rest_card, .choice .mealcard {
   border-radius: 1rem;
+}
+
+.choice label .item_title, .choice label .item_arg {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @font-face {
@@ -484,13 +490,13 @@ form .title .heart_place input:checked + label .mask, .rest_card .heart_place in
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("../images/loader/P1.jpg");
+    background-image: url("../images/loader/P2.jpg");
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("../images/loader/L1.jpg");
+    background-image: url("../images/loader/L2.jpg");
   }
 }
 
@@ -1073,18 +1079,24 @@ body {
   margin: 0 auto;
 }
 
-* .flxR {
+.flxR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-* .flxC {
+.flxC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header {
@@ -1336,7 +1348,7 @@ form .btn {
      object-fit: cover;
 }
 
-.main {
+main {
   background-color: whitesmoke;
   border-radius: 2rem 2rem 0 0;
   padding-top: 2.25rem;
@@ -1350,17 +1362,11 @@ form .btn {
           flex-flow: column nowrap;
 }
 
-.main .h2, .main .h6 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.main .h4 {
+.choice .h4 {
   text-transform: uppercase;
 }
 
-.main .h4::after {
+.choice .h4::after {
   display: block;
   content: "";
   margin-top: 5px;
@@ -1369,54 +1375,52 @@ form .btn {
   background-color: #a0e4d3;
 }
 
-.main .choice .mealcard label {
+.choice .mealcard {
   background-color: red;
   background-color: white;
   margin: .875rem 0;
+}
+
+.choice label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.main .choice .mealcard label * {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.main .choice .mealcard label .flxC {
-  padding: .75rem .75rem;
   width: 100%;
 }
 
-.main .choice .mealcard label .flxC .flxR {
+.choice label .flxC {
+  padding: .75rem .75rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+}
+
+.choice label .flxR {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.main .choice .mealcard label .item_arg {
-  display: block;
-}
-
-.main .choice .mealcard label .item_price {
+.choice label .item_price {
   font-size: 15px;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   margin-right: .75rem;
 }
 
-.main .choice .mealcard label .visual {
+.choice label .visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 3.7rem;
   width: 0;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 0rem;
+          flex: 0 0 0rem;
   border-radius: 0 1rem 1rem 0;
   background-color: #a0e4d3;
   -webkit-transition-delay: 40ms;
@@ -1425,7 +1429,7 @@ form .btn {
           transition-duration: 800ms;
 }
 
-.main .choice .mealcard label .visual .visual_check {
+.choice label .visual .visual_check {
   color: red;
   color: white;
   -webkit-transition-delay: 40ms;
@@ -1435,16 +1439,18 @@ form .btn {
   font-size: 1.25rem;
 }
 
-.main .choice .mealcard input:checked + label .visual {
-  width: 3.7rem;
+.choice input:checked + label .visual {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3.7rem;
+          flex: 0 0 3.7rem;
 }
 
-.main .choice .mealcard input:checked + label .visual .visual_check {
+.choice input:checked + label .visual .visual_check {
   color: blue;
   color: white;
   -webkit-transition-delay: 40ms;
           transition-delay: 40ms;
-  -webkit-transition-duration: 800ms;
-          transition-duration: 800ms;
+  -webkit-transition-duration: 80ms;
+          transition-duration: 80ms;
 }
 /*# sourceMappingURL=main.css.map */

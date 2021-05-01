@@ -12,10 +12,14 @@ body {
     margin: 0 auto;
 }
 
-* .flxR{
-    flex-flow:row nowrap;
+.flxR{
+    display: flex;
+    flex-direction: row;
+    //flex-flow:row nowrap;
 }
 
-* .flxC{
-    flex-flow:column nowrap;
+.flxC{
+    display: flex;
+    flex-direction:column;
+    //flex-flow:column nowrap;
 }
