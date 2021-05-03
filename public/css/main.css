@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
 }
 
+.btn:active, .rest_card:active {
+  top: 3px;
+}
+
 @font-face {
   font-family: "Shrikhand";
   src: url("https://aurelbouchard.github.io/AurelienBouchard_3_05032021/public/fonts/shrikhand/shrikhand-regular-webfont.ttf");

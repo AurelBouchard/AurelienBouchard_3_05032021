@@ -95,28 +95,30 @@
     
     position: relative;
 
-        & a img{
-            height: 10.875rem;
-            width:100%;
-            object-fit: cover;
-            border-radius: $card_radius $card_radius 0 0;
-        }
-        & .flag_new {
-            position: absolute;
-            top:0.7rem;
-            right:0.7rem;
-        }
-        & .bottom_stripe{
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: .75rem .8125rem;
-        }
-        & .heart_place{
-            position: absolute;
-            top: 12rem;
-            right:1.5rem;
-            @extend %heart;
-        }
+    & a img{
+        height: 10.875rem;
+        width:100%;
+        object-fit: cover;
+        border-radius: $card_radius $card_radius 0 0;
+    }
+    & .flag_new {
+        position: absolute;
+        top:0.7rem;
+        right:0.7rem;
+    }
+    & .bottom_stripe{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: .75rem .8125rem;
+    }
+    & .heart_place{
+        position: absolute;
+        top: 12rem;
+        right:1.5rem;
+        @extend %heart;
+    }
+
+    @extend %clic;
 }
