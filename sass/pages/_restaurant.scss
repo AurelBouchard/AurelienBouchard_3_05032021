@@ -1,126 +1,119 @@
 .welcome_pic {
-    height: $welcome_pic_height;
+  height: $welcome_pic_height;
+  width: 100%;
+  & img {
+    height: 100%;
     width: 100%;
-    & img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
+    object-fit: cover;
+  }
 }
-
 
 main {
-    background-color: $bg-main;
-    border-radius: 2rem 2rem 0 0;
-    padding-top: 2.25rem;
-    margin-top: -2rem;
+  background-color: $bg-main;
+  border-radius: 2rem 2rem 0 0;
+  padding-top: 2.25rem;
+  margin-top: -2rem;
 
-    display: flex;
-    flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
 }
-
 
 .choice {
-   
-    & .h4{
-        text-transform: uppercase;
-        &::after {
-            @include underscore;
-        }
+  & .h4 {
+    text-transform: uppercase;
+    &::after {
+      @include underscore;
+    }
+  }
+
+  & .mealcard {
+    @include card(mealcard);
+    opacity: 0;
+    overflow: hidden;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation: 500ms ($i - 1) * 150ms 1 forwards show_meal;
+      }
+    }
+  }
+
+  & label {
+    display: flex;
+    width: 100%;
+
+    & .flxC {
+      padding: 0.75rem 0.75rem;
+      flex: 1;
+      min-width: 0; // 3h pour trouver l'importance de cette propriété...
     }
 
-    & .mealcard{
-        @include card(mealcard);
-        opacity:0;
-
-        @for $i from 1 through 4 {
-            &:nth-child(#{$i}){
-                animation: 500ms ($i - 1)*150ms 1 forwards show_meal;
-            }
-        }
+    & .flxR {
+      justify-content: space-between;
     }
 
-    
+    & .item_title {
+      @extend %text_ellipsis;
+    }
 
-    & label{
+    & .item_arg {
+      @extend %text_ellipsis;
+    }
+
+    & .item_price {
+      font-size: map-get($FS_map, h6);
+      margin-right: 0.5rem;
+    }
+
+    & .visual {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-        width: 100%; // 100%
+        flex: 0 1 0rem;
 
-        & .flxC{
-            padding: .75rem .75rem;
-            flex: 1;
-            min-width: 0; // 3h pour trouver l'importance de cette propriété...
-        }
+        border-radius: 0 $card_radius $card_radius 0;
 
-        & .flxR{
-            justify-content: space-between;
-        }
+        background-color: $color-ter;
 
-        & .item_title{
-            @extend %text_ellipsis;
-        }
+        transition-delay: 30ms;
+        transition-duration: 600ms;
 
-        & .item_arg{
-            @extend %text_ellipsis;
-        }
+        overflow: hidden;
 
-        & .item_price{
-            font-size: map-get($FS_map, h6 );
-            margin-right: .75rem;
-        }
-
-        & .visual{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 0;
-            flex : 0 0 0rem;
-            
-
-            border-radius: 0 $card_radius $card_radius 0;
-
-            background-color: $color-ter;
-
-            transition-delay: 40ms;
-            transition-duration: 800ms;
-            
-
-            & .visual_check{
-                color: red;
-                color: white;
-                transition-delay: 40ms;
-                transition-duration: 800ms;
-                font-size: $check_size;
-            }
-        }
-             
-    }
-
-    & input:checked + label .visual{
-        //transition-delay: 40ms;
-        //transition-duration: 800ms;
-            flex : 0 0 3.7rem;
-
-        & .visual_check{
-            color: blue;
+        & .visual_check {
+            margin-left: 1.1rem;
+            font-size: 1.5rem;
             color: white;
-            transition-delay: 40ms;
-            transition-duration: 80ms;
+
+            transform-origin: 0.75rem center;
 
         }
     }
+  }
 
+  & input:checked + label .visual {
+    flex: 0 0 3.7rem;
+
+    & .visual_check {
+      animation: 350ms 150ms twist forwards;
+    }
+  }
 }
 
 
-@keyframes show_meal{
-    0%{
-        transform: translate(0, .8rem);
-    }
-    100% {
-        opacity: 1;
-    }
+@keyframes show_meal {
+  0% {
+    transform: translate(0, 0.8rem);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
+@keyframes twist {
+  100% {
+    transform: rotate( 1turn );
+  }
+}
