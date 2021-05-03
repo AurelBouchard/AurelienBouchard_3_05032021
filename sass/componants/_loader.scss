@@ -30,19 +30,16 @@
         z-index: 90;
         top: 0;
         display: flex;
-        //justify-content: flex-start;
-        //align-content: flex-start;
         flex-flow: row wrap;
 
         width:100%;
         height:100%;
         
-        $rand:random(2);
         @media screen and (orientation :portrait){
-            background-image: url(nth($back-portrait, $rand));
+            background-image:   url(#{$back-portrait});
         }
         @media screen and (orientation :landscape){
-            background-image: url(nth($back-landscape, $rand));
+            background-image:   url(#{$back-landscape});
         }
         
         background-size: cover;

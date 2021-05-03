@@ -490,13 +490,13 @@ form .title .heart_place input:checked + label .mask, .rest_card .heart_place in
 
 @media screen and (orientation: portrait) {
   .loader {
-    background-image: url("../images/loader/P1.jpg");
+    background-image: url(../images/loader/P1.jpg);
   }
 }
 
 @media screen and (orientation: landscape) {
   .loader {
-    background-image: url("../images/loader/L1.jpg");
+    background-image: url(../images/loader/L1.jpg);
   }
 }
 
