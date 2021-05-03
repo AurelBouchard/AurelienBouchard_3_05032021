@@ -31,7 +31,7 @@ main {
     opacity: 0;
     overflow: hidden;
 
-    @for $i from 1 through 4 {
+    @for $i from 1 through 5 { // OU EST PASSE LE FIRST CHILD !?!?!?!
       &:nth-child(#{$i}) {
         animation: 500ms ($i - 1) * 150ms 1 forwards show_meal;
       }

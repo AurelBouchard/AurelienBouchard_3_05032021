@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
 }
 
-.btn:active, .rest_card:active {
+.btn:active {
   top: 3px;
 }
 
@@ -1405,6 +1405,11 @@ main {
 .choice .mealcard:nth-child(4) {
   -webkit-animation: 500ms 450ms 1 forwards show_meal;
           animation: 500ms 450ms 1 forwards show_meal;
+}
+
+.choice .mealcard:nth-child(5) {
+  -webkit-animation: 500ms 600ms 1 forwards show_meal;
+          animation: 500ms 600ms 1 forwards show_meal;
 }
 
 .choice label {
