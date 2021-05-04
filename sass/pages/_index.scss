@@ -33,9 +33,20 @@
     background-color: white;
     padding-top: 3rem;
 
+    & .rolling_rules{
+        @include screen(XL) {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+        }
+    }
+
+
     & .rule{
         @include card(rule);
         margin-left: 0.75rem;
+
+        padding-right: 1rem;
 
         display: flex;
         justify-content: baseline;
@@ -88,6 +99,16 @@
     margin-top: .875rem;
     display: flex;
     flex-flow: column nowrap;
+
+    @include screen(L) {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+        & .rest_card{
+            width:40%;
+            margin-bottom: 2rem;
+        }
+    }
 }
 
 .rest_card {

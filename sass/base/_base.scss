@@ -8,6 +8,7 @@
 
 body{
     @extend %clean_text;
+    min-width: 320px;
 }
 
 @each $h_level in $h_levels {

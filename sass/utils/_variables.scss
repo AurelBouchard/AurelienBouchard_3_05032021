@@ -68,7 +68,7 @@ $menu_radius:   2rem;
 
 $h_levels: h1, h2, h3, h4, h5, h6;
 
-// ##### LOADER #####
+// ##### LOADER ####################################
 
 $delay-H: 220ms;
 $coef:0.7;
@@ -81,3 +81,11 @@ $flip-duration: 400ms;
 
 $back-portrait :"../images/loader/P1.jpg";
 $back-landscape :   "../images/loader/L1.jpg";
+
+
+// ##### BREAKPOINTS ################################
+
+$breakpoints: (
+    L:  600px,
+    XL: 1024px
+);

@@ -8,13 +8,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-#rules_list .rule, .rest_card, .choice .mealcard, .btn {
-  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
-          box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
-}
-
 #rules_list .rule, .rest_card, .choice .mealcard {
   border-radius: 1rem;
+  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
+          box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
 }
 
 .choice label .item_title, .choice label .item_arg {
@@ -110,6 +107,10 @@ body {
   padding: 0;
 }
 
+body {
+  min-width: 320px;
+}
+
 .h1 {
   font-size: 24px;
 }
@@ -158,6 +159,8 @@ input[type="checkbox"] {
   background-size: 1000%, 100%;
   background-position: 0 0;
   padding: 1rem 0;
+  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
+          box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
 }
 
 .btn:hover {
@@ -166,6 +169,8 @@ input[type="checkbox"] {
           transition-delay: 20ms;
   -webkit-transition-duration: 140ms;
           transition-duration: 140ms;
+  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
+          box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
 }
 
 .btn:visited {
@@ -1240,6 +1245,21 @@ form .btn {
   padding-top: 3rem;
 }
 
+@media screen and (min-width: 1024px) {
+  #rules_list .rolling_rules {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 #rules_list .rule {
   background-color: red;
   background-color: whitesmoke;
@@ -1247,6 +1267,7 @@ form .btn {
   padding-bottom: 1.25rem;
   margin: 1.5rem 0;
   margin-left: 0.75rem;
+  padding-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1305,6 +1326,22 @@ form .btn {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+}
+
+@media screen and (min-width: 600px) {
+  .show_restaurants {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .show_restaurants .rest_card {
+    width: 40%;
+    margin-bottom: 2rem;
+  }
 }
 
 .rest_card {

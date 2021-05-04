@@ -11,7 +11,7 @@
 
 @mixin card($type){
     @extend %card_style;
-    background-color: red;
+    background-color: red; // STAY RED IF NO ARGUMENT PROVIDED
 
     @if $type == restcard {
         background-color: white;
@@ -30,4 +30,18 @@
         margin: 1.5rem 0;
     }
 
+}
+
+
+
+@mixin shadow($lightness:85%){
+    // offset-x | offset-y | blur-radius | spread-radius | color 
+    box-shadow: .5rem .5rem .8rem 0 hsl(0, 0%, $lightness);
+}
+
+
+@mixin screen($size){
+    @media screen and (min-width: map-get($breakpoints, $size )){
+        @content;
+    }
 }

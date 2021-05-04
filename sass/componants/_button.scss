@@ -13,12 +13,13 @@
     
     padding:1rem 0;
 
-    @extend %shadow;
+    @include shadow;
 
     &:hover{
         background-position: 100% 0;
         transition-delay: 20ms;
         transition-duration: 140ms;
+        @include shadow(60%);
     }
 
     @extend %clic;
