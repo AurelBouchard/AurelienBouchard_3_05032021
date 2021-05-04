@@ -1,61 +1,33 @@
 %heart{ // aka .heart_place
 
-    width:$heart_size*1.1;
-
-    opacity: 0;
-    animation: lag 1ms 260ms forwards;
+    width:	$heart_size*1.2;
+    height:	$heart_size*1.2;
 
 
     & label {
-        height: $heart_size;
-        width: $heart_size;
+		display: flex;
 
         & .shape{ //pourtour noir
             height: $heart_size;
-            width: $heart_size;
-        }
-        
-        & .bottle{
-            position: relative;
-            color: $color-prim;
-
-            font-size: $heart_size*2;
-
-            left:-($heart_size*1.8);
-            top:-($heart_size*2.2);
-
-            opacity: 0;
-            transform-origin: (95% 20%);
-            transform : scale(0);
+			width: $heart_size;
         }
 
-        & .flow{
-            position: relative;
-            color: $color-prim;
-
-            font-size: $heart_size;
-            height:$heart_size;
-
-            top:-($heart_size*4);
-
-            opacity: 0;
-            transform: scale(0);
-        }
-    
         & .mask{
+            font-size: $heart_size;
+            line-height:$heart_size;
+
             position: relative;
+            left: - $heart_size;
+
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
             background-image: linear-gradient(to left top, $color-prim, $color-sec);
 
-            font-size: $heart_size;
-            height:$heart_size;
+			transform-origin: center;
+			transform: scale(1.1);
 
-            top:-($heart_size*4.2);
-
-            opacity: 0;
-            animation: _unmask 400ms backwards;
+            animation: _unmask 400ms forwards;
         }
     }
 
@@ -64,24 +36,10 @@
     & input:checked{
         & + label{
             z-index: 50;
-            transition: z-index 0ms 2s;
 
-            & .shape{
-                opacity: 0;
-                transition: opacity 300ms 1100ms;}
-
-            &  .bottle{
-                animation-name: bottle;
-                animation-delay: 80ms;
-                animation-duration: 2000ms;}
-            
-            &  .flow{
-                animation-name: flow;
-                animation-delay: 160ms;
-                animation-duration: 1800ms;}
-
-            &  .mask{
-                animation: _mask 200ms 1950ms forwards;
+            & > .mask{
+				opacity: 0;
+                animation: _mask 600ms 40ms forwards;
             }
         }
     }
@@ -89,72 +47,23 @@
 
 }
 
-@keyframes bottle {
-    0% {
-        transform: scale(1);
-    }
-    20% {
-        opacity:1;
-    }
-    55%, 70% {
-        transform: rotate(57deg);
-    }
-    90% {
-        opacity:1;
-    }
-    99% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-    }
-}
 
-@keyframes flow {
-    0% {
-        transform: translate(0, 0);
-    }
-    40%{
-        opacity:1;
-        transform: scale(1) translate(0, 0.4*$heart_size);
-    }
-    90% {
-        transform: scale(1) translate(0, 0.9*$heart_size) ;
-    }
-    95% {
-        transform: scale(1.12) translate(0, 0.95*$heart_size);
-    }
-    100% {
-        transform: scale(1);
-        transform: translate(0, 0.95*$heart_size);
-        opacity:1;
-    }
-}
 
 @keyframes _mask {
     0% {
-        transform: scale(1);
         opacity: 0;
     }
     100% {
-        transform: scale(1);
         opacity: 1;
     }
 }
 
 @keyframes _unmask {
     0% {
-        transform: scale(1);
         opacity: 1;
     }
     100% {
         transform: scale(0);
-        opacity: 1;
-    }
-}
-
-@keyframes lag{
-    100%{
         opacity: 1;
     }
 }
