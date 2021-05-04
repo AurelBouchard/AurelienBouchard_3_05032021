@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-#rules_list .rule, .rest_card, .choice .mealcard {
+.choice .mealcard, #rules_list .rule, .rest_card {
   border-radius: 1rem;
   -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
           box-shadow: 0.5rem 0.5rem 0.8rem 0 #d9d9d9;
@@ -185,24 +185,24 @@ input[type="checkbox"] {
   border-radius: 0.2rem;
 }
 
-form .title .heart_place, .rest_card .heart_place {
+.rest_card .heart_place, main .title .heart_place {
   width: 24.2px;
   opacity: 0;
   -webkit-animation: lag 1ms 260ms forwards;
           animation: lag 1ms 260ms forwards;
 }
 
-form .title .heart_place label, .rest_card .heart_place label {
+.rest_card .heart_place label, main .title .heart_place label {
   height: 22px;
   width: 22px;
 }
 
-form .title .heart_place label .shape, .rest_card .heart_place label .shape {
+.rest_card .heart_place label .shape, main .title .heart_place label .shape {
   height: 22px;
   width: 22px;
 }
 
-form .title .heart_place label .bottle, .rest_card .heart_place label .bottle {
+.rest_card .heart_place label .bottle, main .title .heart_place label .bottle {
   position: relative;
   color: #9256dc;
   font-size: 44px;
@@ -215,7 +215,7 @@ form .title .heart_place label .bottle, .rest_card .heart_place label .bottle {
           transform: scale(0);
 }
 
-form .title .heart_place label .flow, .rest_card .heart_place label .flow {
+.rest_card .heart_place label .flow, main .title .heart_place label .flow {
   position: relative;
   color: #9256dc;
   font-size: 22px;
@@ -226,7 +226,7 @@ form .title .heart_place label .flow, .rest_card .heart_place label .flow {
           transform: scale(0);
 }
 
-form .title .heart_place label .mask, .rest_card .heart_place label .mask {
+.rest_card .heart_place label .mask, main .title .heart_place label .mask {
   position: relative;
   color: transparent;
   background-clip: text;
@@ -241,19 +241,19 @@ form .title .heart_place label .mask, .rest_card .heart_place label .mask {
           animation: _unmask 400ms backwards;
 }
 
-form .title .heart_place input:checked + label, .rest_card .heart_place input:checked + label {
+.rest_card .heart_place input:checked + label, main .title .heart_place input:checked + label {
   z-index: 50;
   -webkit-transition: z-index 0ms 2s;
   transition: z-index 0ms 2s;
 }
 
-form .title .heart_place input:checked + label .shape, .rest_card .heart_place input:checked + label .shape {
+.rest_card .heart_place input:checked + label .shape, main .title .heart_place input:checked + label .shape {
   opacity: 0;
   -webkit-transition: opacity 300ms 1100ms;
   transition: opacity 300ms 1100ms;
 }
 
-form .title .heart_place input:checked + label .bottle, .rest_card .heart_place input:checked + label .bottle {
+.rest_card .heart_place input:checked + label .bottle, main .title .heart_place input:checked + label .bottle {
   -webkit-animation-name: bottle;
           animation-name: bottle;
   -webkit-animation-delay: 80ms;
@@ -262,7 +262,7 @@ form .title .heart_place input:checked + label .bottle, .rest_card .heart_place 
           animation-duration: 2000ms;
 }
 
-form .title .heart_place input:checked + label .flow, .rest_card .heart_place input:checked + label .flow {
+.rest_card .heart_place input:checked + label .flow, main .title .heart_place input:checked + label .flow {
   -webkit-animation-name: flow;
           animation-name: flow;
   -webkit-animation-delay: 160ms;
@@ -271,7 +271,7 @@ form .title .heart_place input:checked + label .flow, .rest_card .heart_place in
           animation-duration: 1800ms;
 }
 
-form .title .heart_place input:checked + label .mask, .rest_card .heart_place input:checked + label .mask {
+.rest_card .heart_place input:checked + label .mask, main .title .heart_place input:checked + label .mask {
   -webkit-animation: _mask 200ms 1950ms forwards;
           animation: _mask 200ms 1950ms forwards;
 }
@@ -1180,24 +1180,33 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+  max-width: 600px;
 }
 
-form .title {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  position: relative;
-  padding-bottom: 2rem;
+@media screen and (min-width: 1024px) {
+  form {
+    max-width: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
-form .title h1 {
-  font-size: 28px;
+form .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-form .title .heart_place {
-  position: absolute;
-  top: .25rem;
-  right: .5rem;
+@media screen and (min-width: 1024px) {
+  form .bottom {
+    -ms-flex-preferred-size: 90vh;
+        flex-basis: 90vh;
+  }
 }
 
 form .btn {
@@ -1206,6 +1215,160 @@ form .btn {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;
+}
+
+.choice .h4 {
+  text-transform: uppercase;
+}
+
+.choice .h4::after {
+  display: block;
+  content: "";
+  margin-top: 5px;
+  height: 3px;
+  width: 2.5rem;
+  background-color: #a0e4d3;
+}
+
+.choice .mealcard {
+  background-color: red;
+  background-color: white;
+  margin: .875rem 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.choice .mealcard:nth-child(1) {
+  -webkit-animation: 500ms 0ms 1 forwards show_meal;
+          animation: 500ms 0ms 1 forwards show_meal;
+}
+
+.choice .mealcard:nth-child(2) {
+  -webkit-animation: 500ms 150ms 1 forwards show_meal;
+          animation: 500ms 150ms 1 forwards show_meal;
+}
+
+.choice .mealcard:nth-child(3) {
+  -webkit-animation: 500ms 300ms 1 forwards show_meal;
+          animation: 500ms 300ms 1 forwards show_meal;
+}
+
+.choice .mealcard:nth-child(4) {
+  -webkit-animation: 500ms 450ms 1 forwards show_meal;
+          animation: 500ms 450ms 1 forwards show_meal;
+}
+
+.choice .mealcard:nth-child(5) {
+  -webkit-animation: 500ms 600ms 1 forwards show_meal;
+          animation: 500ms 600ms 1 forwards show_meal;
+}
+
+.choice label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.choice label .flxC {
+  padding: 0.75rem 0.75rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+}
+
+.choice label .flxR {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.choice label .item_price {
+  font-size: 15px;
+  margin-right: 0.5rem;
+}
+
+.choice label .visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0rem;
+          flex: 0 1 0rem;
+  border-radius: 0 1rem 1rem 0;
+  background-color: #a0e4d3;
+  -webkit-transition-delay: 30ms;
+          transition-delay: 30ms;
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
+  overflow: hidden;
+}
+
+.choice label .visual .visual_check {
+  margin-left: 1.1rem;
+  font-size: 1.5rem;
+  color: white;
+  -webkit-transform-origin: 0.75rem center;
+          transform-origin: 0.75rem center;
+}
+
+.choice input:checked + label .visual {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3.7rem;
+          flex: 0 0 3.7rem;
+}
+
+.choice input:checked + label .visual .visual_check {
+  -webkit-animation: 350ms 150ms twist forwards;
+          animation: 350ms 150ms twist forwards;
+}
+
+@media screen and (min-width: 1024px) {
+  .choice {
+    min-width: 25%;
+  }
+}
+
+@-webkit-keyframes show_meal {
+  0% {
+    -webkit-transform: translate(0, 0.8rem);
+            transform: translate(0, 0.8rem);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show_meal {
+  0% {
+    -webkit-transform: translate(0, 0.8rem);
+            transform: translate(0, 0.8rem);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes twist {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes twist {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
 }
 
 #locate {
@@ -1412,151 +1575,21 @@ main {
           flex-flow: column nowrap;
 }
 
-.choice .h4 {
-  text-transform: uppercase;
-}
-
-.choice .h4::after {
-  display: block;
-  content: "";
-  margin-top: 5px;
-  height: 3px;
-  width: 2.5rem;
-  background-color: #a0e4d3;
-}
-
-.choice .mealcard {
-  background-color: red;
-  background-color: white;
-  margin: .875rem 0;
-  opacity: 0;
-  overflow: hidden;
-}
-
-.choice .mealcard:nth-child(1) {
-  -webkit-animation: 500ms 0ms 1 forwards show_meal;
-          animation: 500ms 0ms 1 forwards show_meal;
-}
-
-.choice .mealcard:nth-child(2) {
-  -webkit-animation: 500ms 150ms 1 forwards show_meal;
-          animation: 500ms 150ms 1 forwards show_meal;
-}
-
-.choice .mealcard:nth-child(3) {
-  -webkit-animation: 500ms 300ms 1 forwards show_meal;
-          animation: 500ms 300ms 1 forwards show_meal;
-}
-
-.choice .mealcard:nth-child(4) {
-  -webkit-animation: 500ms 450ms 1 forwards show_meal;
-          animation: 500ms 450ms 1 forwards show_meal;
-}
-
-.choice .mealcard:nth-child(5) {
-  -webkit-animation: 500ms 600ms 1 forwards show_meal;
-          animation: 500ms 600ms 1 forwards show_meal;
-}
-
-.choice label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-.choice label .flxC {
-  padding: 0.75rem 0.75rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  min-width: 0;
-}
-
-.choice label .flxR {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.choice label .item_price {
-  font-size: 15px;
-  margin-right: 0.5rem;
-}
-
-.choice label .visual {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+main .title {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 0rem;
-          flex: 0 1 0rem;
-  border-radius: 0 1rem 1rem 0;
-  background-color: #a0e4d3;
-  -webkit-transition-delay: 30ms;
-          transition-delay: 30ms;
-  -webkit-transition-duration: 600ms;
-          transition-duration: 600ms;
-  overflow: hidden;
+      -ms-flex: none;
+          flex: none;
+  position: relative;
+  padding-bottom: 2rem;
 }
 
-.choice label .visual .visual_check {
-  margin-left: 1.1rem;
-  font-size: 1.5rem;
-  color: white;
-  -webkit-transform-origin: 0.75rem center;
-          transform-origin: 0.75rem center;
+main .title h1 {
+  font-size: 28px;
 }
 
-.choice input:checked + label .visual {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 3.7rem;
-          flex: 0 0 3.7rem;
-}
-
-.choice input:checked + label .visual .visual_check {
-  -webkit-animation: 350ms 150ms twist forwards;
-          animation: 350ms 150ms twist forwards;
-}
-
-@-webkit-keyframes show_meal {
-  0% {
-    -webkit-transform: translate(0, 0.8rem);
-            transform: translate(0, 0.8rem);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show_meal {
-  0% {
-    -webkit-transform: translate(0, 0.8rem);
-            transform: translate(0, 0.8rem);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes twist {
-  100% {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
-}
-
-@keyframes twist {
-  100% {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
+main .title .heart_place {
+  position: absolute;
+  top: .25rem;
+  right: .5rem;
 }
 /*# sourceMappingURL=main.css.map */

@@ -16,104 +16,26 @@ main {
 
   display: flex;
   flex-flow: column nowrap;
+
+  & .title {
+    flex: none;
+    position: relative;
+    
+    & h1{
+        font-size: map-get($FS_map, h1 )*(28/24);
+    }
+
+    & .heart_place{
+        position: absolute;
+        top:    .25rem;
+        right:  .5rem;
+        @extend %heart;
+    }
+    
+
+    padding-bottom: 2rem;
 }
 
-.choice {
-  & .h4 {
-    text-transform: uppercase;
-    &::after {
-      @include underscore;
-    }
-  }
-
-  & .mealcard {
-    @include card(mealcard);
-    opacity: 0;
-    overflow: hidden;
-
-    @for $i from 1 through 5 { // OU EST PASSE LE FIRST CHILD !?!?!?!
-      &:nth-child(#{$i}) {
-        animation: 500ms ($i - 1) * 150ms 1 forwards show_meal;
-      }
-    }
-  }
-
-  & label {
-    display: flex;
-    width: 100%;
-
-    & .flxC {
-      padding: 0.75rem 0.75rem;
-      flex: 1;
-      min-width: 0; // 3h pour trouver l'importance de cette propriété...
-    }
-
-    & .flxR {
-      justify-content: space-between;
-    }
-
-    & .item_title {
-      @extend %text_ellipsis;
-    }
-
-    & .item_arg {
-      @extend %text_ellipsis;
-    }
-
-    & .item_price {
-      font-size: map-get($FS_map, h6);
-      margin-right: 0.5rem;
-    }
-
-    & .visual {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        flex: 0 1 0rem;
-
-        border-radius: 0 $card_radius $card_radius 0;
-
-        background-color: $color-ter;
-
-        transition-delay: 30ms;
-        transition-duration: 600ms;
-
-        overflow: hidden;
-
-        & .visual_check {
-            margin-left: 1.1rem;
-            font-size: 1.5rem;
-            color: white;
-
-            transform-origin: 0.75rem center;
-
-        }
-    }
-  }
-
-  & input:checked + label .visual {
-    flex: 0 0 3.7rem;
-
-    & .visual_check {
-      animation: 350ms 150ms twist forwards;
-    }
-  }
 }
 
 
-@keyframes show_meal {
-  0% {
-    transform: translate(0, 0.8rem);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@keyframes twist {
-  100% {
-    transform: rotate( 1turn );
-  }
-}

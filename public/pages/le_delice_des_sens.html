@@ -26,19 +26,22 @@
 
         
         <main>
-            <form method="post" action="#" name="menu_form" class="container">
-                <div class="title">
-                    <h1>Le délice des sens</h1>
-                    <div class="heart_place">
-                        <input type="checkbox" id="love_4bis" name="love_4bis" value="">
-                        <label for="love_4bis">
-                            <img src="../images/svg/heart-light.svg" alt="heart_symbol" class="shape"/>
-                            <i class="fas fa-wine-bottle bottle"></i>
-                            <i class="fas fa-heart flow"></i>
-                            <i class="fas fa-heart mask"></i>
-                        </label>
-                    </div>
+            <div class="title container">
+                <h1>Le délice des sens</h1>
+                <div class="heart_place">
+                    <input type="checkbox" id="love_4bis" name="love_4bis" value="">
+                    <label for="love_4bis">
+                        <img src="../images/svg/heart-light.svg" alt="heart_symbol" class="shape"/>
+                        <i class="fas fa-wine-bottle bottle"></i>
+                        <i class="fas fa-heart flow"></i>
+                        <i class="fas fa-heart mask"></i>
+                    </label>
                 </div>
+            </div>
+
+            <form method="post" action="#" name="menu_form" class="container">
+
+                <!-- #############################################   STARTER   ###################################### -->
 
                 <div class="choice starters">
                     <h4 class="h4 entree_plat_dessert">entrées</h4>
@@ -97,6 +100,8 @@
                     </div>  
                 </div>
 
+                <!-- #############################################   DISH   ###################################### -->
+
                 <div class="choice dishes">
                     <h4 class="h4 entree_plat_dessert">plats</h4>
 
@@ -154,6 +159,8 @@
                     </div>
                 </div>
 
+                <!-- #############################################   DESSERT   ###################################### -->
+
                 <div class="choice desserts">
                     <h4 class="h4 entree_plat_dessert">desserts</h4>
 
@@ -209,11 +216,11 @@
                             </span>
                         </label>
                     </div>
+             </div>
 
-                    
-                </div>
-
-                <input type="submit" value="Commander" id="order_lapalettedugout" class="btn">
+            <div class="bottom container">
+                <input type="submit" value="Commander" id="order_ledelicedessens" class="btn">
+            </div>
 
             </form>
         </main>
