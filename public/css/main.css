@@ -169,8 +169,8 @@ input[type="checkbox"] {
           transition-delay: 20ms;
   -webkit-transition-duration: 140ms;
           transition-duration: 140ms;
-  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
-          box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
+  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #b3b3b3;
+          box-shadow: 0.5rem 0.5rem 0.8rem 0 #b3b3b3;
 }
 
 .btn:visited {
