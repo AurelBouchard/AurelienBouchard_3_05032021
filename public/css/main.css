@@ -1157,6 +1157,15 @@ footer li i {
   font-size: 12px;
 }
 
+footer li a:hover::after {
+  display: block;
+  content: "";
+  margin-top: 0;
+  height: 1px;
+  width: 2.5rem;
+  background-color: white;
+}
+
 form {
   position: relative;
   display: -webkit-box;

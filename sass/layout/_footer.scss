@@ -17,10 +17,12 @@ footer {
         line-height: 18px;
         font-size: $FS_foot_li_2;
         margin-bottom: .5rem;
+
         &:nth-child(1), &:nth-child(2) {
             font-weight: bold;
             font-size: $FS_foot_li_1;
         }
+
         & i{
             display:inline-block;
             line-height: 18px;
@@ -28,6 +30,10 @@ footer {
             text-align: left;
             font-size: 12px;
 
+        }
+
+        & a:hover::after {
+            @include underscore(white, $thickness:1px, $mtop:0);
         }
     }
 

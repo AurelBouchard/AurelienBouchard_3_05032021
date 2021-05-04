@@ -1,7 +1,7 @@
-@mixin underscore($color:$color-ter, $thickness:3px, $length:2.5rem) {
+@mixin underscore($color:$color-ter, $thickness:3px, $length:2.5rem, $mtop:5px) {
     display:block;
     content: "";
-    margin-top: 5px;
+    margin-top: $mtop;;
     height: $thickness;
     width:  $length;
     background-color: $color;
