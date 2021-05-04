@@ -1025,13 +1025,7 @@ form .bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media screen and (min-width: 1024px) {
-  form .bottom {
-    -ms-flex-preferred-size: 90vh;
-        flex-basis: 90vh;
-  }
+  width: 90vw;
 }
 
 form .btn {
