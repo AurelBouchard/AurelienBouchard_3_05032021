@@ -13,9 +13,6 @@ form {
 
     & .bottom{
         display: flex;
-        @include screen(XL){
-            flex-basis: 90vh;
-        }
     }
 
     & .btn{
@@ -41,8 +38,8 @@ form {
       opacity: 0;
       overflow: hidden;
   
-      @for $i from 1 through 5 { // OU EST PASSE LE FIRST CHILD !?!?!?!
-        &:nth-child(#{$i}) {
+      @for $i from 1 through 4 {
+        &:nth-of-type(#{$i}) {
           animation: 500ms ($i - 1) * 150ms 1 forwards show_meal;
         }
       }

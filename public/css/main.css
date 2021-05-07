@@ -169,8 +169,8 @@ input[type="checkbox"] {
           transition-delay: 20ms;
   -webkit-transition-duration: 140ms;
           transition-duration: 140ms;
-  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
-          box-shadow: 0.5rem 0.5rem 0.8rem 0 #999999;
+  -webkit-box-shadow: 0.5rem 0.5rem 0.8rem 0 #b3b3b3;
+          box-shadow: 0.5rem 0.5rem 0.8rem 0 #b3b3b3;
 }
 
 .btn:visited {
@@ -186,15 +186,14 @@ input[type="checkbox"] {
 }
 
 .rest_card .heart_place, main .title .heart_place {
-  width: 24.2px;
-  opacity: 0;
-  -webkit-animation: lag 1ms 260ms forwards;
-          animation: lag 1ms 260ms forwards;
+  width: 26.4px;
+  height: 26.4px;
 }
 
 .rest_card .heart_place label, main .title .heart_place label {
-  height: 22px;
-  width: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .rest_card .heart_place label .shape, main .title .heart_place label .shape {
@@ -202,7 +201,86 @@ input[type="checkbox"] {
   width: 22px;
 }
 
-.rest_card .heart_place label .bottle, main .title .heart_place label .bottle {
+.rest_card .heart_place label .mask, main .title .heart_place label .mask {
+  font-size: 22px;
+  line-height: 22px;
+  position: relative;
+  left: -22px;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
+  background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: _unmask 400ms forwards;
+          animation: _unmask 400ms forwards;
+}
+
+.rest_card .heart_place input:checked + label, main .title .heart_place input:checked + label {
+  z-index: 50;
+}
+
+.rest_card .heart_place input:checked + label > .mask, main .title .heart_place input:checked + label > .mask {
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-animation: _mask 600ms 40ms forwards;
+          animation: _mask 600ms 40ms forwards;
+}
+
+@-webkit-keyframes _mask {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes _mask {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes _unmask {
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+
+@keyframes _unmask {
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+}
+
+main .title .heart_place_var {
+  width: 24.2px;
+  opacity: 0;
+  -webkit-animation: lag 1ms 260ms forwards;
+          animation: lag 1ms 260ms forwards;
+}
+
+main .title .heart_place_var label {
+  height: 22px;
+  width: 22px;
+}
+
+main .title .heart_place_var label .shape {
+  height: 22px;
+  width: 22px;
+}
+
+main .title .heart_place_var label .bottle {
   position: relative;
   color: #9256dc;
   font-size: 44px;
@@ -215,7 +293,7 @@ input[type="checkbox"] {
           transform: scale(0);
 }
 
-.rest_card .heart_place label .flow, main .title .heart_place label .flow {
+main .title .heart_place_var label .flow {
   position: relative;
   color: #9256dc;
   font-size: 22px;
@@ -226,7 +304,7 @@ input[type="checkbox"] {
           transform: scale(0);
 }
 
-.rest_card .heart_place label .mask, main .title .heart_place label .mask {
+main .title .heart_place_var label .mask {
   position: relative;
   color: transparent;
   background-clip: text;
@@ -237,23 +315,23 @@ input[type="checkbox"] {
   height: 22px;
   top: -92.4px;
   opacity: 0;
-  -webkit-animation: _unmask 400ms backwards;
-          animation: _unmask 400ms backwards;
+  -webkit-animation: _unmask_var 400ms backwards;
+          animation: _unmask_var 400ms backwards;
 }
 
-.rest_card .heart_place input:checked + label, main .title .heart_place input:checked + label {
+main .title .heart_place_var input:checked + label {
   z-index: 50;
   -webkit-transition: z-index 0ms 2s;
   transition: z-index 0ms 2s;
 }
 
-.rest_card .heart_place input:checked + label .shape, main .title .heart_place input:checked + label .shape {
+main .title .heart_place_var input:checked + label .shape {
   opacity: 0;
   -webkit-transition: opacity 300ms 1100ms;
   transition: opacity 300ms 1100ms;
 }
 
-.rest_card .heart_place input:checked + label .bottle, main .title .heart_place input:checked + label .bottle {
+main .title .heart_place_var input:checked + label .bottle {
   -webkit-animation-name: bottle;
           animation-name: bottle;
   -webkit-animation-delay: 80ms;
@@ -262,7 +340,7 @@ input[type="checkbox"] {
           animation-duration: 2000ms;
 }
 
-.rest_card .heart_place input:checked + label .flow, main .title .heart_place input:checked + label .flow {
+main .title .heart_place_var input:checked + label .flow {
   -webkit-animation-name: flow;
           animation-name: flow;
   -webkit-animation-delay: 160ms;
@@ -271,9 +349,9 @@ input[type="checkbox"] {
           animation-duration: 1800ms;
 }
 
-.rest_card .heart_place input:checked + label .mask, main .title .heart_place input:checked + label .mask {
-  -webkit-animation: _mask 200ms 1950ms forwards;
-          animation: _mask 200ms 1950ms forwards;
+main .title .heart_place_var input:checked + label .mask {
+  -webkit-animation: _mask_var 200ms 1950ms forwards;
+          animation: _mask_var 200ms 1950ms forwards;
 }
 
 @-webkit-keyframes bottle {
@@ -380,7 +458,7 @@ input[type="checkbox"] {
   }
 }
 
-@-webkit-keyframes _mask {
+@-webkit-keyframes _mask_var {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -393,7 +471,7 @@ input[type="checkbox"] {
   }
 }
 
-@keyframes _mask {
+@keyframes _mask_var {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -406,7 +484,7 @@ input[type="checkbox"] {
   }
 }
 
-@-webkit-keyframes _unmask {
+@-webkit-keyframes _unmask_var {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -419,7 +497,7 @@ input[type="checkbox"] {
   }
 }
 
-@keyframes _unmask {
+@keyframes _unmask_var {
   0% {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -1202,13 +1280,6 @@ form .bottom {
   display: flex;
 }
 
-@media screen and (min-width: 1024px) {
-  form .bottom {
-    -ms-flex-preferred-size: 90vh;
-        flex-basis: 90vh;
-  }
-}
-
 form .btn {
   width: 11.75rem;
   margin-top: 2.125rem;
@@ -1238,29 +1309,24 @@ form .btn {
   overflow: hidden;
 }
 
-.choice .mealcard:nth-child(1) {
+.choice .mealcard:nth-of-type(1) {
   -webkit-animation: 500ms 0ms 1 forwards show_meal;
           animation: 500ms 0ms 1 forwards show_meal;
 }
 
-.choice .mealcard:nth-child(2) {
+.choice .mealcard:nth-of-type(2) {
   -webkit-animation: 500ms 150ms 1 forwards show_meal;
           animation: 500ms 150ms 1 forwards show_meal;
 }
 
-.choice .mealcard:nth-child(3) {
+.choice .mealcard:nth-of-type(3) {
   -webkit-animation: 500ms 300ms 1 forwards show_meal;
           animation: 500ms 300ms 1 forwards show_meal;
 }
 
-.choice .mealcard:nth-child(4) {
+.choice .mealcard:nth-of-type(4) {
   -webkit-animation: 500ms 450ms 1 forwards show_meal;
           animation: 500ms 450ms 1 forwards show_meal;
-}
-
-.choice .mealcard:nth-child(5) {
-  -webkit-animation: 500ms 600ms 1 forwards show_meal;
-          animation: 500ms 600ms 1 forwards show_meal;
 }
 
 .choice label {
@@ -1459,16 +1525,16 @@ form .btn {
   width: 1rem;
 }
 
-#rules_list .rule:nth-child(2) i {
+#rules_list .rule:nth-of-type(2) i {
   -webkit-transform: scale(0.8, 1);
           transform: scale(0.8, 1);
 }
 
-#rules_list .rule:nth-child(3) {
+#rules_list .rule:nth-of-type(3) {
   background-color: #f4ebff;
 }
 
-#rules_list .rule:nth-child(3) i {
+#rules_list .rule:nth-of-type(3) i {
   color: #9256dc;
   font-size: 18px;
   -webkit-transform: scale(0.8, 1);
@@ -1588,6 +1654,12 @@ main .title h1 {
 }
 
 main .title .heart_place {
+  position: absolute;
+  top: .25rem;
+  right: .5rem;
+}
+
+main .title .heart_place_var {
   position: absolute;
   top: .25rem;
   right: .5rem;
