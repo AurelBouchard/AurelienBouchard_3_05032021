@@ -1025,7 +1025,6 @@ form .bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90vw;
 }
 
 form .btn {
@@ -1057,29 +1056,24 @@ form .btn {
   overflow: hidden;
 }
 
-.choice .mealcard:nth-child(1) {
+.choice .mealcard:nth-of-type(1) {
   -webkit-animation: 500ms 0ms 1 forwards show_meal;
           animation: 500ms 0ms 1 forwards show_meal;
 }
 
-.choice .mealcard:nth-child(2) {
+.choice .mealcard:nth-of-type(2) {
   -webkit-animation: 500ms 150ms 1 forwards show_meal;
           animation: 500ms 150ms 1 forwards show_meal;
 }
 
-.choice .mealcard:nth-child(3) {
+.choice .mealcard:nth-of-type(3) {
   -webkit-animation: 500ms 300ms 1 forwards show_meal;
           animation: 500ms 300ms 1 forwards show_meal;
 }
 
-.choice .mealcard:nth-child(4) {
+.choice .mealcard:nth-of-type(4) {
   -webkit-animation: 500ms 450ms 1 forwards show_meal;
           animation: 500ms 450ms 1 forwards show_meal;
-}
-
-.choice .mealcard:nth-child(5) {
-  -webkit-animation: 500ms 600ms 1 forwards show_meal;
-          animation: 500ms 600ms 1 forwards show_meal;
 }
 
 .choice label {
@@ -1278,16 +1272,16 @@ form .btn {
   width: 1rem;
 }
 
-#rules_list .rule:nth-child(2) i {
+#rules_list .rule:nth-of-type(2) i {
   -webkit-transform: scale(0.8, 1);
           transform: scale(0.8, 1);
 }
 
-#rules_list .rule:nth-child(3) {
+#rules_list .rule:nth-of-type(3) {
   background-color: #f4ebff;
 }
 
-#rules_list .rule:nth-child(3) i {
+#rules_list .rule:nth-of-type(3) i {
   color: #9256dc;
   font-size: 18px;
   -webkit-transform: scale(0.8, 1);
