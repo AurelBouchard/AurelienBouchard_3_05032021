@@ -25,7 +25,7 @@
             background-image: linear-gradient(to left top, $color-prim, $color-sec);
 
 			transform-origin: center;
-			transform: scale(1.1);
+			//dfgtyuio
 
             animation: _unmask 400ms forwards;
         }
@@ -39,6 +39,7 @@
 
             & > .mask{
 				opacity: 0;
+				transform: scale(1.1);
                 animation: _mask 600ms 40ms forwards;
             }
         }
@@ -59,9 +60,9 @@
 }
 
 @keyframes _unmask {
-    0% {
-        opacity: 1;
-    }
+    // 0% {
+    //     opacity: 1;
+    // }
     100% {
         transform: scale(0);
         opacity: 1;

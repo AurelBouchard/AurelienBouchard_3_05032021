@@ -55,7 +55,7 @@
             top:-($heart_size*4.2);
 
             opacity: 0;
-            animation: _unmask 400ms backwards;
+            animation: _unmask_var 400ms backwards;
         }
     }
 
@@ -81,7 +81,7 @@
                 animation-duration: 1800ms;}
 
             &  .mask{
-                animation: _mask 200ms 1950ms forwards;
+                animation: _mask_var 200ms 1950ms forwards;
             }
         }
     }
@@ -131,7 +131,7 @@
     }
 }
 
-@keyframes _mask {
+@keyframes _mask_var {
     0% {
         transform: scale(1);
         opacity: 0;
@@ -142,7 +142,7 @@
     }
 }
 
-@keyframes _unmask {
+@keyframes _unmask_var {
     0% {
         transform: scale(1);
         opacity: 1;
