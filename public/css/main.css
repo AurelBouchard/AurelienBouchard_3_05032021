@@ -207,8 +207,10 @@ input[type="checkbox"] {
   position: relative;
   left: -22px;
   color: transparent;
-  background-clip: text;
+  background-clip: content-box;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
   background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
   -webkit-transform-origin: center;
@@ -307,8 +309,10 @@ main .title .heart_place_var label .flow {
 main .title .heart_place_var label .mask {
   position: relative;
   color: transparent;
-  background-clip: text;
+  background-clip: content-box;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#9256dc), to(#ff7ad9));
   background-image: linear-gradient(to left top, #9256dc, #ff7ad9);
   font-size: 22px;
@@ -1500,9 +1504,6 @@ form .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: baseline;
-      -ms-flex-pack: baseline;
-          justify-content: baseline;
 }
 
 #rules_list .rule .chip {

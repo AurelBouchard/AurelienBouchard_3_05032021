@@ -45,8 +45,11 @@
         & .mask{
             position: relative;
             color: transparent;
-            background-clip: text;
+            //background-clip: text;
+            background-clip: content-box;
             -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -ms-background-clip: text;
             background-image: linear-gradient(to left top, $color-prim, $color-sec);
 
             font-size: $heart_size;
